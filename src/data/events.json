@@ -1,0 +1,269 @@
+[
+  {
+    "id": "piquenique-musical-no-parque",
+    "slug": "piquenique-musical-no-parque",
+    "status": "published",
+    "featured": true,
+    "title": "Piquenique musical no parque",
+    "category": "Música",
+    "locationName": "Parque da Aclimação",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDj-hwcJaCFUlCnmd-R697MnY-aA_5hUnAzgz66NdVJFiyLSODGRUNftUfzANINky3wDnxYz8YCEzdZWGovXJsA_VaigkEqJNcoyi-YyMDfyBxrmvfg-NNAbgREaociqGVdHLEoyn0SO5omYDV1KA6LMyMp5izo73LIyyJj-8nrOZmOP6FmI3oVjWEkOZZBs4UV4sbFlP4IKDcVGaFFJ_PnQE1VHCBAyBb34ygVNsLGe3RVHj91uRIs",
+      "alt": "Imagem de Piquenique musical no parque"
+    },
+    "eventStatus": "scheduled",
+    "organizer": "Coletivo Encontros da Aclimação",
+    "email": "eventos@example.com",
+    "website": "https://example.com",
+    "gallery": [
+      {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGNEsJJOh9sjUVtg8eJE7QUzhgPjlDYnobqx0KCDLoEIs5a0NHKtGNTOIKCfXBSrervYuNogKgopxkFeyHghPUAdIwmhsrRPKEs8duA9djLi2eEs_mXkuXh62fNZY0Iq_r6jC2QPj5xojwz0bYCRQqGcrRzsiVnDQio2DtBdy7_41H5_QnRdu8chRrjrVtWqLZdpfo-_BFWHl1C0yiytXtvRwdf3cRgTC_T7pYxUd3U9nNq9nt9z9n",
+        "alt": "Imagem de Caminhada pelos casarões"
+      }
+    ],
+    "subtitle": "Música ao ar livre e uma manhã para encontrar a vizinhança.",
+    "body": "Um encontro ao ar livre com apresentações acústicas e tempo para conversar, descansar e aproveitar a manhã no parque.\n\nLeve sua toalha e escolha um lugar para acompanhar a programação com a família ou os amigos.\n\n**Para quem**\n\nMoradores e visitantes de todas as idades.\n\n**O que levar**\n\nToalha ou canga, água e proteção para o sol.\n\n**Orientações**\n\nEm caso de chuva, acompanhe as orientações da organização.\n\n**Como participar**\n\nEntrada livre, sem inscrição prévia.",
+    "sessions": [
+      {
+        "date": "2026-11-15",
+        "startTime": "10:00",
+        "endTime": "12:00"
+      }
+    ],
+    "admission": "free"
+  },
+  {
+    "id": "caminhada-pelos-casaroes",
+    "slug": "caminhada-pelos-casaroes",
+    "status": "published",
+    "featured": true,
+    "title": "Caminhada pelos casarões",
+    "category": "Cultura",
+    "locationName": "Ponto de encontro a confirmar",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGNEsJJOh9sjUVtg8eJE7QUzhgPjlDYnobqx0KCDLoEIs5a0NHKtGNTOIKCfXBSrervYuNogKgopxkFeyHghPUAdIwmhsrRPKEs8duA9djLi2eEs_mXkuXh62fNZY0Iq_r6jC2QPj5xojwz0bYCRQqGcrRzsiVnDQio2DtBdy7_41H5_QnRdu8chRrjrVtWqLZdpfo-_BFWHl1C0yiytXtvRwdf3cRgTC_T7pYxUd3U9nNq9nt9z9n",
+      "alt": "Imagem de Caminhada pelos casarões"
+    },
+    "eventStatus": "scheduled",
+    "organizer": "Coletivo Caminhos do Bairro",
+    "subtitle": "Um olhar atento para fachadas, jardins e detalhes do bairro.",
+    "body": "Um passeio a pé para observar fachadas, jardins e detalhes que passam despercebidos no cotidiano. O percurso reúne paradas para conversar sobre a paisagem do bairro.\n\n**Para quem**\n\nPessoas interessadas em arquitetura e caminhadas urbanas.\n\n**O que levar**\n\nCalçado confortável e garrafa de água.\n\n**Como participar**\n\nInscreva-se para receber as orientações do ponto de encontro.\n\n[Consulte as informações de participação](https://example.com/inscricao).",
+    "sessions": [
+      {
+        "date": "2026-11-21",
+        "startTime": "10:00",
+        "endTime": "12:00"
+      }
+    ],
+    "admission": "free"
+  },
+  {
+    "id": "oficina-de-ceramica",
+    "slug": "oficina-de-ceramica",
+    "status": "published",
+    "featured": true,
+    "title": "Oficina de cerâmica",
+    "category": "Oficinas",
+    "locationName": "Ateliê Mariana Prado",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCHvmzQQKWIOwXrpXIYwDfl6GxrcyGMAECBUDscoL7TM0u8mW7syGBfJUzdo_Ui7IW2RoOAF3vGRh68uTibfW98muanLDCsVWLLXigUQt2ZWHnwmx4fSKjbO7sn_zdnjiYyYbxzIoIC4svRAzm9a4A3o1P0ftAq24Ncwub38P4UDgUFe-5wd7ysKMYEsGS5GM2iS9qn1iZ6s5A2nfi48C20XfmgMQkGR7-zcTvet6CPtv3tzM_Kvy1q",
+      "alt": "Imagem de Oficina de cerâmica"
+    },
+    "eventStatus": "scheduled",
+    "email": "eventos@example.com",
+    "website": "https://example.com",
+    "organizer": "Ateliê Mariana Prado",
+    "address": {
+      "street": "Rua das Oliveiras do Bairro",
+      "number": "45",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP"
+    },
+    "subtitle": "Experimentar a argila e criar algo com as próprias mãos.",
+    "body": "Uma oficina prática para conhecer a argila, experimentar técnicas de modelagem e criar uma peça com as próprias mãos.\n\nO encontro inclui uma apresentação dos materiais e acompanhamento durante a atividade.\n\n**Entrada:** R$ 120,00. Consulte as condições com a organização.\n\n**Para quem**\n\nIniciantes, sem necessidade de experiência anterior.\n\n**O que está incluído**\n\nMateriais e acompanhamento durante a oficina.\n\n**Como participar**\n\nConsulte a disponibilidade e conclua a inscrição no site da organização.\n\n[Consulte as informações de participação](https://example.com/ingressos).\n\n### Prepare-se para o encontro 🎨\n\n- Use roupas confortáveis.\n- Leve uma garrafa de água.\n- Confira as condições de cada dia com a organização.",
+    "sessions": [
+      {
+        "date": "2026-11-28",
+        "startTime": "10:00",
+        "endTime": "18:00"
+      },
+      {
+        "date": "2026-11-29",
+        "startTime": "12:00",
+        "endTime": "18:00"
+      },
+      {
+        "date": "2026-12-05",
+        "startTime": "10:00",
+        "endTime": "18:00"
+      },
+      {
+        "date": "2026-12-06",
+        "startTime": "12:00",
+        "endTime": "18:00"
+      },
+      {
+        "date": "2026-12-12",
+        "startTime": "10:00",
+        "endTime": "18:00"
+      },
+      {
+        "date": "2026-12-13",
+        "startTime": "12:00",
+        "endTime": "18:00"
+      }
+    ],
+    "admission": "paid"
+  },
+  {
+    "id": "degustacao-de-cafes-especiais",
+    "slug": "degustacao-de-cafes-especiais",
+    "status": "published",
+    "featured": true,
+    "title": "Degustação de cafés especiais",
+    "category": "Gastronomia",
+    "locationName": "Café & Livraria da Praça",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCem_DybhUOnCj_fpivwl6bmUHuR454RjWWdYfZ1mefdlH_l8noi67QEowGJEwEHCn9CnXOslDcWI2en9n2K89Ng81lBZKWf2w07-vrX8LuFIsY23_fXyXkFOhFV4TcBDmBdvn0qmy84x1z6EfotpIM2fUecJ716Xz6anMeDgIlzj9Gz95O7U_zrKY6LmHfcKVwnFRYWWq1UcBBJBDK4aVlgjG3vXm07ZmkUyvtxAFMcnPEOyieNS6I",
+      "alt": "Imagem de Degustação de cafés especiais"
+    },
+    "eventStatus": "scheduled",
+    "email": "eventos@example.com",
+    "website": "https://example.com",
+    "organizer": "Café & Livraria da Praça",
+    "address": {
+      "street": "Rua Jardim das Letras",
+      "number": "128",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP"
+    },
+    "subtitle": "Descobrir aromas, origens e novas formas de preparar café.",
+    "body": "Um encontro para explorar aromas e sabores de diferentes cafés e conhecer métodos de preparo.\n\nA atividade combina conversa, demonstração e degustação orientada.\n\n**Entrada:** R$ 65,00. Consulte as condições com a organização.\n\n**Para quem**\n\nIniciantes, sem necessidade de experiência anterior.\n\n**O que está incluído**\n\nDegustação dos cafés apresentados durante o encontro.\n\n**Como participar**\n\nConsulte a disponibilidade e conclua a inscrição no site da organização.\n\n[Consulte as informações de participação](https://example.com/ingressos).",
+    "sessions": [
+      {
+        "date": "2026-12-03",
+        "startTime": "10:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-04",
+        "startTime": "10:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-05",
+        "startTime": "10:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-06",
+        "startTime": "10:00",
+        "endTime": "22:00"
+      }
+    ],
+    "admission": "paid"
+  },
+  {
+    "id": "encontro-de-leitura",
+    "slug": "encontro-de-leitura",
+    "status": "published",
+    "featured": false,
+    "title": "Encontro de leitura na praça",
+    "category": "Cultura",
+    "locationName": "Espaço cultural do bairro",
+    "eventStatus": "scheduled",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGNEsJJOh9sjUVtg8eJE7QUzhgPjlDYnobqx0KCDLoEIs5a0NHKtGNTOIKCfXBSrervYuNogKgopxkFeyHghPUAdIwmhsrRPKEs8duA9djLi2eEs_mXkuXh62fNZY0Iq_r6jC2QPj5xojwz0bYCRQqGcrRzsiVnDQio2DtBdy7_41H5_QnRdu8chRrjrVtWqLZdpfo-_BFWHl1C0yiytXtvRwdf3cRgTC_T7pYxUd3U9nNq9nt9z9n",
+      "alt": "Imagem de Caminhada pelos casarões"
+    },
+    "organizer": "Coletivo Cultura no Bairro",
+    "subtitle": "Um encontro para celebrar a produção cultural e as pessoas do bairro.",
+    "body": "A programação reúne moradores e visitantes para compartilhar ideias e conhecer iniciativas culturais da região.\n\n[Consulte as informações de participação](https://example.com/inscricao).",
+    "sessions": [
+      {
+        "date": "2025-08-10",
+        "startTime": "10:00",
+        "endTime": "17:00"
+      }
+    ],
+    "admission": "free"
+  },
+  {
+    "id": "feira-criativa-do-bairro",
+    "slug": "feira-criativa-do-bairro",
+    "status": "published",
+    "featured": false,
+    "title": "Feira criativa do bairro",
+    "category": "Cultura",
+    "locationName": "Espaço cultural do bairro",
+    "eventStatus": "cancelled",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGNEsJJOh9sjUVtg8eJE7QUzhgPjlDYnobqx0KCDLoEIs5a0NHKtGNTOIKCfXBSrervYuNogKgopxkFeyHghPUAdIwmhsrRPKEs8duA9djLi2eEs_mXkuXh62fNZY0Iq_r6jC2QPj5xojwz0bYCRQqGcrRzsiVnDQio2DtBdy7_41H5_QnRdu8chRrjrVtWqLZdpfo-_BFWHl1C0yiytXtvRwdf3cRgTC_T7pYxUd3U9nNq9nt9z9n",
+      "alt": "Imagem de Caminhada pelos casarões"
+    },
+    "organizer": "Coletivo Cultura no Bairro",
+    "subtitle": "Um encontro para celebrar a produção cultural e as pessoas do bairro.",
+    "body": "A programação reúne moradores e visitantes para compartilhar ideias e conhecer iniciativas culturais da região.\n\n**Atualização**\n\nA edição foi cancelada. Consulte a organização para mais informações.\n\n[Consulte as informações de participação](https://example.com/inscricao).",
+    "sessions": [
+      {
+        "date": "2026-12-12",
+        "startTime": "10:00",
+        "endTime": "17:00"
+      }
+    ],
+    "admission": "free"
+  },
+  {
+    "id": "mostra-de-arte-local",
+    "slug": "mostra-de-arte-local",
+    "status": "published",
+    "featured": false,
+    "title": "Mostra de arte local",
+    "category": "Cultura",
+    "locationName": "Espaço cultural do bairro",
+    "eventStatus": "postponed",
+    "coverImage": {
+      "src": "/images/mostra-arte.svg",
+      "alt": "Cartaz da Mostra de Arte Local, Aclimação"
+    },
+    "organizer": "Coletivo Cultura no Bairro",
+    "imageFit": "contain",
+    "subtitle": "Um encontro para celebrar a produção cultural e as pessoas do bairro.",
+    "body": "A programação reúne moradores e visitantes para compartilhar ideias e conhecer iniciativas culturais da região.\n\n**Atualização**\n\nA mostra foi adiada. A nova data será divulgada pela organização.\n\n[Consulte as informações de participação](https://example.com/inscricao).",
+    "sessions": [
+      {
+        "date": "2026-12-05",
+        "startTime": "12:00",
+        "endTime": "21:00"
+      },
+      {
+        "date": "2026-12-06",
+        "startTime": "12:00",
+        "endTime": "21:00"
+      },
+      {
+        "date": "2026-12-12",
+        "startTime": "12:00",
+        "endTime": "21:00"
+      },
+      {
+        "date": "2026-12-13",
+        "startTime": "12:00",
+        "endTime": "21:00"
+      },
+      {
+        "date": "2026-12-19",
+        "startTime": "12:00",
+        "endTime": "21:00"
+      },
+      {
+        "date": "2026-12-20",
+        "startTime": "12:00",
+        "endTime": "21:00"
+      }
+    ],
+    "admission": "free"
+  }
+]

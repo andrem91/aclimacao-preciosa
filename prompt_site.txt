@@ -1,0 +1,1462 @@
+# Projeto: Aclimação Preciosa
+
+Quero que você desenvolva a primeira versão funcional do site **Aclimação Preciosa**, utilizando como referência visual os arquivos HTML/CSS exportados pelo Google Stitch que estão disponíveis neste projeto.
+
+Antes de escrever código, analise todos os layouts fornecidos pelo Stitch e entenda o sistema visual existente.
+
+Não copie os HTMLs de forma literal.
+
+Use-os como **referência de design**, reconstruindo a interface de forma limpa, componentizada, responsiva e adequada à stack descrita abaixo.
+
+---
+
+# 1. Contexto do projeto
+
+**Aclimação Preciosa** é um projeto voltado à valorização do bairro da Aclimação, em São Paulo.
+
+O objetivo de longo prazo é ajudar a transformar o bairro de um local de passagem em um destino de:
+
+* comércio local;
+* gastronomia;
+* cultura;
+* lazer;
+* experiências;
+* eventos;
+* história;
+* turismo local;
+* convivência.
+
+O portal digital é uma das ferramentas dessa iniciativa.
+
+Ele não deve parecer:
+
+* marketplace;
+* e-commerce;
+* portal da prefeitura;
+* guia turístico genérico;
+* sistema corporativo;
+* rede social.
+
+A experiência desejada é a de um:
+
+> **guia urbano e editorial contemporâneo para descobrir a Aclimação.**
+
+O usuário deve sentir algo como:
+
+> “Eu não sabia que havia tanta coisa interessante na Aclimação.”
+
+---
+
+# 2. Objetivo da versão v0.1
+
+A primeira versão deve ser propositalmente simples.
+
+Queremos colocar no ar um **MVP bonito, rápido e funcional**, que permita:
+
+1. descobrir estabelecimentos;
+2. conhecer eventos e experiências;
+3. descobrir lugares interessantes;
+4. abrir páginas individuais desses conteúdos;
+5. mostrar informações básicas;
+6. permitir que comerciantes e moradores demonstrem interesse em participar.
+
+Não queremos construir agora toda a plataforma futura.
+
+A prioridade da v0.1 é:
+
+> **visual + conteúdo + navegação + simplicidade.**
+
+---
+
+# 3. Stack obrigatória da v0.1
+
+Utilizar:
+
+* **Next.js**
+* **React**
+* **TypeScript**
+* **App Router**
+* **Tailwind CSS**
+* **Lucide React**
+* dados locais em **JSON**
+
+Utilizar versões estáveis e atuais compatíveis entre si.
+
+Não implementar backend próprio nesta versão.
+
+Não utilizar nesta versão:
+
+* Supabase;
+* Prisma;
+* banco SQL;
+* autenticação;
+* API própria;
+* React Hook Form;
+* Zod;
+* CMS;
+* sistema administrativo.
+
+Essas tecnologias poderão entrar nas próximas fases.
+
+---
+
+# 4. Princípio técnico
+
+A v0.1 deve ser simples, mas não desorganizada.
+
+Os dados não devem ficar escritos diretamente dentro dos componentes React.
+
+Criar uma separação semelhante a:
+
+```text
+src/
+├── app/
+├── components/
+├── data/
+├── lib/
+├── types/
+└── ...
+```
+
+Exemplo:
+
+```text
+src/data/
+├── establishments.json
+├── experiences.json
+├── events.json
+└── places.json
+```
+
+Criar tipos TypeScript correspondentes.
+
+Criar uma camada simples de acesso aos dados, por exemplo:
+
+```text
+src/lib/
+├── establishments.ts
+├── experiences.ts
+├── events.ts
+└── places.ts
+```
+
+Exemplos de funções:
+
+```ts
+getEstablishments()
+getFeaturedEstablishments()
+getEstablishmentBySlug()
+
+getEvents()
+getEventBySlug()
+
+getExperiences()
+getExperienceBySlug()
+
+getPlaces()
+getFeaturedPlaces()
+getPlaceBySlug()
+```
+
+Os componentes não devem ficar importando e filtrando JSON de maneira espalhada pelo projeto.
+
+---
+
+# 5. Conteúdo mockado
+
+Nesta primeira etapa vários conteúdos ainda serão demonstrativos.
+
+Por isso, todas as entidades devem possuir:
+
+```ts
+isMock: boolean
+```
+
+Quando:
+
+```ts
+isMock === true
+```
+
+a interface pode mostrar discretamente:
+
+**Demonstração**
+
+Isso é especialmente importante para:
+
+* eventos;
+* experiências;
+* informações ainda não confirmadas.
+
+Nunca apresentar conteúdo fictício como se fosse informação oficial.
+
+---
+
+# 6. Conteúdo real x demonstrativo
+
+É aceitável misturar no protótipo:
+
+### Conteúdo real
+
+* alguns estabelecimentos;
+* lugares reais;
+* nome do projeto;
+* textos institucionais.
+
+### Conteúdo demonstrativo
+
+* experiências futuras;
+* eventos ainda não confirmados;
+* exemplos de programação.
+
+Sempre utilizar `isMock` para diferenciá-los.
+
+---
+
+# 7. Direção visual
+
+Os HTMLs gerados pelo Stitch representam a referência visual principal.
+
+Preservar a identidade criada:
+
+* fundo off-white / creme claro;
+* verde profundo como cor principal;
+* amarelo/ocre/dourado usado pontualmente;
+* tipografia serifada elegante nos títulos;
+* sans-serif limpa nos textos;
+* fotografia em destaque;
+* bastante espaço em branco;
+* aparência editorial;
+* clima urbano e acolhedor;
+* poucos efeitos;
+* sombras discretas;
+* bordas sutis;
+* cantos arredondados com moderação.
+
+O conceito visual pode ser entendido como:
+
+> **Editorial urbano botânico.**
+
+Também existe uma referência sutil ao conceito de algo “precioso”, mas:
+
+* não usar diamantes grandes;
+* não parecer joalheria;
+* não exagerar em elementos de pedra preciosa.
+
+---
+
+# 8. Importante: simplificar os layouts do Stitch
+
+Os layouts do Stitch estão visualmente bons, porém ainda contêm elementos complexos demais para esta primeira versão.
+
+Implemente uma versão mais simples.
+
+## Remover da v0.1
+
+Não implementar:
+
+* autenticação;
+* botão de usuário;
+* área de usuário;
+* avaliações;
+* estrelas;
+* comentários;
+* ranking;
+* “aberto agora” calculado;
+* mapas incorporados;
+* rotas;
+* circuitos;
+* mapas interativos;
+* botão “iniciar roteiro”;
+* marketplace;
+* compra;
+* checkout;
+* reservas próprias;
+* delivery;
+* cardápio completo;
+* selos de certificação;
+* números inventados;
+* estatísticas fictícias;
+* número de locais cadastrados;
+* newsletter;
+* programa de embaixadores;
+* filtros avançados;
+* busca avançada;
+* recomendações por algoritmo;
+* área administrativa.
+
+---
+
+# 9. Header
+
+Criar um header simples e consistente.
+
+À esquerda:
+
+**Aclimação Preciosa**
+
+Não duplicar desnecessariamente símbolo + nome + outro grande nome da marca.
+
+Navegação:
+
+* Início
+* Estabelecimentos
+* Experiências & Eventos
+* Lugares
+
+Botão:
+
+**Participe**
+
+Não mostrar:
+
+* ícone de usuário;
+* login;
+* busca nesta versão.
+
+No mobile:
+
+* menu hambúrguer;
+* navegação simples.
+
+---
+
+# 10. Footer
+
+Footer simples.
+
+Mostrar:
+
+**Aclimação Preciosa**
+
+Pequena frase institucional.
+
+Links:
+
+* Estabelecimentos
+* Experiências & Eventos
+* Lugares
+* Participe
+* Sobre
+* Contato
+
+Pode mostrar Instagram.
+
+Não tornar o footer excessivamente grande.
+
+---
+
+# 11. HOME
+
+A Home deve ser simples e ter aproximadamente estes blocos:
+
+## 1. Hero
+
+Grande fotografia.
+
+Título:
+
+**Descubra a Aclimação de um novo jeito.**
+
+Texto curto:
+
+**Lugares, experiências e negócios que fazem o bairro ser especial.**
+
+Um único CTA principal:
+
+**Explorar a Aclimação**
+
+Evitar vários botões.
+
+---
+
+## 2. Estabelecimentos em destaque
+
+Título:
+
+**Conheça negócios da Aclimação**
+
+Mostrar aproximadamente 3 estabelecimentos.
+
+Card:
+
+* foto;
+* categoria;
+* nome;
+* pequena frase.
+
+CTA geral:
+
+**Ver todos os estabelecimentos**
+
+---
+
+## 3. Experiências & Eventos
+
+Título:
+
+**O que está acontecendo**
+
+Mostrar aproximadamente 2 ou 3 conteúdos.
+
+Card:
+
+* imagem;
+* badge `EVENTO` ou `EXPERIÊNCIA`;
+* título;
+* data ou frequência;
+* local.
+
+CTA:
+
+**Ver experiências e eventos**
+
+---
+
+## 4. Lugares
+
+Título:
+
+**Lugares para conhecer**
+
+Mostrar aproximadamente 3 lugares.
+
+Cards podem ser maiores e mais editoriais que os de estabelecimento.
+
+Mostrar apenas:
+
+* fotografia;
+* categoria;
+* nome;
+* pequena descrição.
+
+CTA:
+
+**Explorar lugares**
+
+---
+
+## 5. Participe
+
+Título:
+
+**Faça parte do Aclimação Preciosa**
+
+Texto curto.
+
+CTA:
+
+**Participar**
+
+---
+
+# 12. Página de Estabelecimentos
+
+Rota:
+
+```text
+/estabelecimentos
+```
+
+Estrutura:
+
+### Cabeçalho
+
+Título:
+
+**Estabelecimentos**
+
+Subtítulo curto.
+
+### Categorias
+
+Filtro simples por categoria.
+
+Categorias iniciais:
+
+* Todos
+* Comer & Beber
+* Saúde & Bem-estar
+* Compras
+* Arte & Cultura
+* Educação
+* Serviços
+
+Utilizar chips/tabs simples.
+
+No mobile, permitir scroll horizontal se necessário.
+
+Não implementar outros filtros.
+
+### Grid
+
+Cards com:
+
+* imagem;
+* categoria;
+* nome;
+* descrição curta.
+
+O próprio card deve ser clicável.
+
+Evitar diversos botões dentro do card.
+
+---
+
+# 13. Detalhe de Estabelecimento
+
+Rota:
+
+```text
+/estabelecimentos/[slug]
+```
+
+Estrutura:
+
+## Cabeçalho
+
+* categoria;
+* nome;
+* descrição curta.
+
+## Imagem / galeria
+
+Uma imagem principal grande.
+
+Pode haver pequena galeria com poucas imagens.
+
+## Sobre
+
+Título:
+
+**Sobre**
+
+Descrição.
+
+## Informações
+
+Mostrar apenas o necessário:
+
+* endereço;
+* horário;
+* telefone;
+* WhatsApp;
+* Instagram;
+* site.
+
+CTAs, quando existirem:
+
+* WhatsApp
+* Instagram
+* Site
+
+Não mostrar:
+
+* mapa incorporado;
+* avaliações;
+* estrelas;
+* comentários;
+* selo;
+* ranking;
+* “aberto agora” calculado.
+
+## Veja também
+
+Opcionalmente mostrar até 3 estabelecimentos.
+
+---
+
+# 14. Experiências & Eventos
+
+Na interface, eventos e experiências aparecem juntos.
+
+Rota principal:
+
+```text
+/experiencias
+```
+
+ou outro nome coerente definido na implementação.
+
+Filtros:
+
+* Todos
+* Eventos
+* Experiências
+
+Cards:
+
+* imagem;
+* badge EVENTO ou EXPERIÊNCIA;
+* título;
+* data ou frequência;
+* local;
+* preço opcional.
+
+Não sobrecarregar o card.
+
+---
+
+# 15. Evento e Experiência continuam entidades diferentes
+
+Apesar de aparecerem juntos na interface, manter:
+
+```text
+events.json
+```
+
+e
+
+```text
+experiences.json
+```
+
+separados.
+
+Também utilizar tipos TypeScript diferentes.
+
+Não criar um único tipo genérico apenas para economizar arquivos.
+
+Evento é orientado a datas.
+
+Experiência pode ser:
+
+* recorrente;
+* permanente;
+* sob agendamento.
+
+---
+
+# 16. Detalhe de Evento
+
+Rota:
+
+```text
+/eventos/[slug]
+```
+
+Estrutura simples:
+
+* badge EVENTO;
+* título;
+* imagem grande;
+* data;
+* horário;
+* local.
+
+Depois:
+
+### Sobre o evento
+
+Descrição.
+
+Depois:
+
+### Informações
+
+* data;
+* horário;
+* local;
+* preço, se houver.
+
+CTA opcional:
+
+**Participar**
+
+Não duplicar informações em vários cards.
+
+Não mostrar a mesma data/local duas vezes.
+
+Não implementar:
+
+* salvar na agenda;
+* mapa;
+* programação complexa;
+* rotas;
+* várias caixas laterais.
+
+---
+
+# 17. Detalhe de Experiência
+
+Rota:
+
+```text
+/experiencias/[slug]
+```
+
+Estrutura:
+
+* badge EXPERIÊNCIA;
+* título;
+* imagem;
+* descrição curta.
+
+### Sobre
+
+Descrição.
+
+### Informações
+
+* local;
+* quando acontece;
+* duração, se houver;
+* preço, se houver.
+
+CTA opcional:
+
+**Saiba mais**
+
+ou:
+
+**Reservar**
+
+Não adicionar muitas informações secundárias.
+
+---
+
+# 18. Lugares
+
+Rota:
+
+```text
+/lugares
+```
+
+Título:
+
+**Lugares para conhecer**
+
+Cards visualmente mais editoriais.
+
+Mostrar:
+
+* foto;
+* categoria;
+* nome;
+* descrição curta.
+
+Categorias podem incluir:
+
+* Natureza
+* História
+* Arte & Cultura
+* Arquitetura
+
+Filtro pode existir apenas se fizer sentido visualmente.
+
+---
+
+# 19. Detalhe de Lugar
+
+Rota:
+
+```text
+/lugares/[slug]
+```
+
+Estrutura:
+
+## Hero
+
+* imagem;
+* categoria;
+* nome;
+* descrição curta.
+
+## Sobre
+
+Texto.
+
+## História
+
+Título:
+
+**A história deste lugar**
+
+2 ou 3 parágrafos.
+
+A história fica dentro desta página nesta versão.
+
+Não haverá uma página independente chamada “Histórias” na v0.1.
+
+## Informações para visitar
+
+* endereço;
+* horário, quando aplicável;
+* entrada gratuita/paga, se necessário.
+
+Pode existir:
+
+**Abrir no Google Maps**
+
+como link externo.
+
+Não incorporar mapa.
+
+## Galeria
+
+Galeria simples.
+
+As imagens não precisam possuir título e descrição individual.
+
+---
+
+# 20. Participe
+
+Rota:
+
+```text
+/participe
+```
+
+Título:
+
+**Faça parte do Aclimação Preciosa**
+
+Mostrar 3 opções:
+
+### Cadastre seu negócio
+
+### Envie um evento ou experiência
+
+### Sugira um lugar ou história
+
+Cada opção pode selecionar um formulário simples.
+
+Não precisamos de backend real nesta primeira etapa.
+
+Para apresentação, o formulário pode ser apenas funcional no frontend ou utilizar uma solução muito simples, desde que isso não aumente significativamente o escopo.
+
+Não criar:
+
+* conta de usuário;
+* dashboard;
+* workflow editorial;
+* curadoria avançada;
+* aprovação automatizada.
+
+---
+
+# 21. Modelagem enxuta
+
+Evitar modelos gigantes.
+
+Criar apenas os campos realmente necessários às telas da v0.1.
+
+## Base
+
+Algo semelhante a:
+
+```ts
+type BaseContent = {
+  id: string
+  slug: string
+  status: "draft" | "published"
+  isMock: boolean
+  featured: boolean
+}
+```
+
+## Imagem
+
+```ts
+type ImageAsset = {
+  src: string
+  alt: string
+}
+```
+
+## Endereço
+
+Pode ser estruturado:
+
+```ts
+type Address = {
+  street: string
+  number?: string
+  complement?: string
+  neighborhood: string
+  city: string
+  state: string
+  postalCode?: string
+}
+```
+
+Não incluir latitude/longitude ainda.
+
+---
+
+# 22. Estabelecimento
+
+Modelo aproximado:
+
+```ts
+type Establishment = BaseContent & {
+  name: string
+  category: EstablishmentCategory
+  tags?: string[]
+
+  shortDescription: string
+  description: string
+
+  coverImage: ImageAsset
+  gallery?: ImageAsset[]
+
+  address: Address
+  openingHours?: string
+
+  phone?: string
+  whatsapp?: string
+  email?: string
+  website?: string
+  instagram?: string
+}
+```
+
+---
+
+# 23. Evento
+
+Algo semelhante a:
+
+```ts
+type Event = BaseContent & {
+  title: string
+  category: EventCategory
+  tags?: string[]
+
+  shortDescription: string
+  description: string
+
+  coverImage: ImageAsset
+  gallery?: ImageAsset[]
+
+  startDate: string
+  endDate?: string
+
+  startTime?: string
+  endTime?: string
+
+  locationName: string
+  address?: Address
+
+  price?: number
+  priceText?: string
+
+  registrationUrl?: string
+}
+```
+
+---
+
+# 24. Experiência
+
+Algo semelhante a:
+
+```ts
+type Experience = BaseContent & {
+  title: string
+  category: ExperienceCategory
+  tags?: string[]
+
+  shortDescription: string
+  description: string
+
+  coverImage: ImageAsset
+  gallery?: ImageAsset[]
+
+  locationName: string
+  address?: Address
+
+  schedule?: string
+  duration?: string
+
+  price?: number
+  priceText?: string
+
+  bookingUrl?: string
+  whatsapp?: string
+}
+```
+
+---
+
+# 25. Lugar
+
+Algo semelhante a:
+
+```ts
+type Place = BaseContent & {
+  name: string
+  category: PlaceCategory
+  tags?: string[]
+
+  shortDescription: string
+  description: string
+
+  history?: string
+
+  coverImage: ImageAsset
+  gallery?: ImageAsset[]
+
+  address: Address
+  openingHours?: string
+}
+```
+
+Não aumentar esses modelos sem necessidade real da UI.
+
+---
+
+# 26. Componentização
+
+Criar componentes reutilizáveis.
+
+Exemplos:
+
+```text
+Header
+Footer
+Container
+SectionTitle
+
+EstablishmentCard
+EventCard
+ExperienceCard
+PlaceCard
+
+CategoryFilters
+Badge
+Button
+ImageGallery
+EmptyState
+```
+
+Evitar componentes gigantes.
+
+Também evitar fragmentação exagerada em dezenas de componentes minúsculos sem benefício.
+
+---
+
+# 27. Server Components x Client Components
+
+Utilizar Server Components por padrão.
+
+Adicionar `"use client"` somente onde houver necessidade real.
+
+Exemplos prováveis de Client Components:
+
+* filtros;
+* menu mobile;
+* interação do formulário.
+
+Não transformar páginas inteiras em Client Components sem necessidade.
+
+---
+
+# 28. Rotas dinâmicas
+
+Utilizar App Router corretamente.
+
+Exemplos:
+
+```text
+app/
+├── page.tsx
+├── estabelecimentos/
+│   ├── page.tsx
+│   └── [slug]/
+│       └── page.tsx
+├── eventos/
+│   └── [slug]/
+├── experiencias/
+│   ├── page.tsx
+│   └── [slug]/
+├── lugares/
+│   ├── page.tsx
+│   └── [slug]/
+└── participe/
+```
+
+Gerar páginas estáticas quando apropriado.
+
+---
+
+# 29. Responsividade
+
+A implementação deve funcionar bem em:
+
+* desktop;
+* tablet;
+* smartphone.
+
+Mobile não deve ser apenas o desktop comprimido.
+
+Especial atenção para:
+
+* header;
+* menu;
+* filtros;
+* cards;
+* imagens;
+* espaçamento;
+* tipografia.
+
+---
+
+# 30. Imagens
+
+Os assets exportados pelo Stitch podem ser usados como referência/protótipo.
+
+Nesta fase, várias imagens poderão ser substituídas posteriormente por fotografias reais da Aclimação.
+
+Estruturar o código para que trocar imagens seja simples.
+
+Utilizar `next/image` quando apropriado.
+
+Evitar distorção.
+
+Definir proporções consistentes.
+
+---
+
+# 31. Acessibilidade básica
+
+Implementar desde a v0.1:
+
+* HTML semântico;
+* `alt`;
+* labels em formulários;
+* navegação por teclado;
+* foco visível;
+* contraste adequado;
+* botões e links corretamente diferenciados.
+
+Não sacrificar acessibilidade para reproduzir exatamente algum detalhe visual do Stitch.
+
+---
+
+# 32. Performance
+
+Evitar dependências desnecessárias.
+
+O portal deve ser leve.
+
+Priorizar:
+
+* Server Components;
+* geração estática;
+* imagens otimizadas;
+* pouco JavaScript enviado ao navegador.
+
+---
+
+# 33. Ícones
+
+Utilizar:
+
+**Lucide React**
+
+Não adicionar outra biblioteca de ícones sem necessidade.
+
+Evitar excesso de ícones.
+
+Usar principalmente quando ajudam na compreensão:
+
+* endereço;
+* horário;
+* telefone;
+* redes;
+* menu.
+
+---
+
+# 34. Tailwind
+
+Utilizar Tailwind para reconstruir os estilos.
+
+Não carregar todo o CSS exportado pelo Stitch como solução final.
+
+Os HTML/CSS do Stitch são **referência visual**, não arquitetura final.
+
+Criar tokens/variáveis consistentes para:
+
+* cores;
+* largura de container;
+* espaçamentos importantes;
+* radius;
+* tipografia, quando fizer sentido.
+
+Evitar classes arbitrárias excessivamente repetidas.
+
+---
+
+# 35. Roadmap
+
+A arquitetura deve permitir evolução futura, mas sem implementar essas funcionalidades agora.
+
+## v0.1 — Portal MVP
+
+Stack:
+
+* Next.js
+* React
+* TypeScript
+* Tailwind
+* Lucide
+* JSON
+
+Funcionalidades:
+
+* Home
+* Estabelecimentos
+* Eventos
+* Experiências
+* Lugares
+* páginas individuais
+* filtros simples
+* Participe
+* dados mockados/reais via JSON
+* responsividade
+* deploy
+
+---
+
+## v0.2 — Conteúdo e gerenciamento
+
+Avaliar:
+
+* **Supabase**
+* PostgreSQL
+* Supabase Storage
+
+Migrar gradualmente JSON → banco.
+
+Criar gerenciamento dos conteúdos.
+
+Possíveis recursos:
+
+* CRUD;
+* upload de imagens;
+* publicação/despublicação;
+* conteúdo destacado.
+
+---
+
+## v0.3 — Validação e formulários
+
+Introduzir quando necessário:
+
+* **Zod**
+* **React Hook Form**
+
+Aplicar nos:
+
+* formulários;
+* cadastro de estabelecimentos;
+* envio de eventos;
+* experiências;
+* sugestões.
+
+Criar validações consistentes client/server.
+
+---
+
+## v0.4 — Camada de dados mais madura
+
+Avaliar:
+
+* Prisma
+
+Mas não assumir automaticamente que Prisma será necessário.
+
+Se Supabase + seus SDKs atenderem adequadamente, evitar adicionar complexidade apenas por padrão.
+
+Escolher Prisma somente se houver benefício arquitetural real.
+
+---
+
+## v0.5 — Mapa e descoberta geográfica
+
+Somente depois que tivermos uma base de dados consistente.
+
+Adicionar:
+
+* latitude/longitude;
+* mapa;
+* estabelecimentos no mapa;
+* lugares;
+* eventos;
+* experiências.
+
+Avaliar soluções como:
+
+* Mapbox;
+* Google Maps;
+* OpenStreetMap/Leaflet.
+
+Ainda não implementar.
+
+---
+
+## v0.6 — Rotas
+
+Adicionar futuramente:
+
+* roteiros temáticos;
+* rota gastronômica;
+* rota histórica;
+* rota cultural;
+* rota de Natal;
+* experiências conectadas.
+
+---
+
+## v0.7 — Usuários/comerciantes, se realmente necessário
+
+Avaliar:
+
+* Supabase Auth.
+
+Possível área para comerciantes:
+
+* atualizar perfil;
+* enviar evento;
+* editar horários;
+* adicionar fotos.
+
+Somente criar isso quando houver necessidade real.
+
+---
+
+## v0.8 — Métricas
+
+Adicionar analytics.
+
+Medir:
+
+* páginas mais visitadas;
+* estabelecimentos mais acessados;
+* eventos;
+* cliques em WhatsApp;
+* Instagram;
+* site externo;
+* conversões.
+
+Isso poderá ajudar a comprovar o impacto do projeto para comerciantes e patrocinadores.
+
+---
+
+# 36. Não faça engenharia para versões futuras agora
+
+O roadmap serve para evitar decisões que bloqueiem o crescimento.
+
+Ele NÃO é autorização para implementar agora:
+
+* banco;
+* autenticação;
+* abstrações complexas;
+* repository genérico sofisticado;
+* interfaces que ninguém usa;
+* infraestrutura desnecessária.
+
+A v0.1 deve continuar simples.
+
+---
+
+# 37. Qualidade do código
+
+Quero:
+
+* TypeScript bem utilizado;
+* nomes claros;
+* estrutura organizada;
+* componentes reutilizáveis;
+* sem duplicação evidente;
+* sem abstração prematura;
+* lint funcionando;
+* build funcionando;
+* sem erros de TypeScript;
+* sem warnings importantes no console.
+
+---
+
+# 38. Critérios de aceite da v0.1
+
+A versão estará pronta quando:
+
+### Visual
+
+* respeitar a identidade dos layouts do Stitch;
+* estiver mais simples que os HTMLs originais;
+* funcionar bem no mobile;
+* possuir aparência consistente em todas as páginas.
+
+### Funcional
+
+* navegar entre páginas;
+* filtrar estabelecimentos;
+* filtrar evento/experiência;
+* abrir detalhe por slug;
+* mostrar dados dos JSONs;
+* diferenciar mocks;
+* links externos funcionarem.
+
+### Técnico
+
+Executar corretamente:
+
+```bash
+npm run dev
+```
+
+e:
+
+```bash
+npm run build
+```
+
+sem erros relevantes.
+
+---
+
+# 39. Processo de implementação
+
+Antes de alterar o projeto:
+
+1. examine todos os arquivos exportados pelo Stitch;
+2. identifique cores, tipografia, espaçamentos, cards e padrões;
+3. identifique elementos que pertencem à versão complexa e devem ser removidos;
+4. apresente rapidamente o plano de implementação;
+5. então implemente.
+
+Não pergunte sobre detalhes pequenos que possam ser resolvidos com bom julgamento.
+
+Quando houver diferença entre:
+
+**copiar exatamente o Stitch**
+
+e
+
+**seguir o escopo simplificado deste documento**,
+
+priorize este documento.
+
+---
+
+# 40. Princípio final
+
+A regra principal da v0.1 é:
+
+> **Se algo não for necessário para o usuário descobrir um estabelecimento, evento, experiência ou lugar, provavelmente não precisa existir ainda.**
+
+Queremos lançar:
+
+> **um guia digital bonito, simples e rápido da Aclimação.**
+
+Não queremos construir agora:
+
+> **uma plataforma gigantesca de turismo, comércio e comunidade.**
+
+Faça a primeira versão muito bem feita e deixe o produto preparado para evoluir por etapas.

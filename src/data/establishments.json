@@ -1,0 +1,163 @@
+[
+  {
+    "id": "cafe-livraria-da-praca",
+    "slug": "cafe-livraria-da-praca",
+    "status": "published",
+    "featured": true,
+    "name": "Café & Livraria da Praça",
+    "category": "Comer & Beber",
+    "shortDescription": "Cafés especiais, boas leituras e uma pausa de frente para a praça.",
+    "description": "Um espaço para desacelerar, escolher a próxima leitura e apreciar cafés preparados na hora. O cardápio reúne bebidas quentes, bolos e pequenos lanches para acompanhar a visita.\n\nAs mesas acolhem encontros e momentos de leitura, enquanto as estantes convidam a descobrir novos autores.",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBTENknpmzkoW1Ui2lFBiSCA6p6GXs59YEmb7k4uj256ecG_LalCQUllaaUDhBzWYCKCR24R9yAKQTJ4LnQNm0Hxx35CLOzFawllpJobohb_VG7xkMlMimTauq16-Oz7-e8GFBdtp8ioovkt3Z1LbWyFXwxwDf1TVU7v1aXMYUsxRn-Rtik1OBwLMO-do5C_GaE29zB1iNxQkRcl-j_XIFqz9qp5768YBOhypFihOnnR5tc4isJoZzL",
+      "alt": "Imagem de Café & Livraria da Praça"
+    },
+    "serviceModes": ["Em espaço próprio"],
+    "logo": {
+      "src": "/images/cafe-livraria-da-praca.svg",
+      "alt": "Logomarca do Café & Livraria da Praça"
+    },
+    "website": "https://example.com",
+    "email": "contato@example.com",
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://example.com/instagram"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://example.com/youtube"
+      },
+      {
+        "platform": "linkedin",
+        "url": "https://example.com/linkedin"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://example.com/facebook"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://example.com/tiktok"
+      }
+    ],
+    "address": {
+      "street": "Rua Jardim das Letras",
+      "number": "128",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP",
+      "complement": "Loja 1"
+    },
+    "openingHours": "Segunda a sábado, das 8h às 19h"
+  },
+  {
+    "id": "atelie-mariana-prado",
+    "slug": "atelie-mariana-prado",
+    "status": "published",
+    "featured": true,
+    "name": "Ateliê Mariana Prado",
+    "category": "Arte & Cultura",
+    "shortDescription": "Cerâmica feita à mão e espaço para descobrir um novo ofício.",
+    "description": "Peças de cerâmica produzidas em pequenos lotes, com atenção às formas, às texturas e aos detalhes do acabamento. O ateliê recebe encomendas e oferece encontros para quem quer experimentar o trabalho com argila.\n\nAs visitas e oficinas acontecem com agendamento prévio.",
+    "serviceModes": ["Em espaço próprio"],
+    "logo": {
+      "src": "/images/atelie-mariana-prado.svg",
+      "alt": "Logomarca do Ateliê Mariana Prado"
+    },
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://example.com/instagram"
+      }
+    ],
+    "address": {
+      "street": "Rua das Oliveiras do Bairro",
+      "number": "45",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP",
+      "complement": "Sala 2"
+    },
+    "openingHours": "Visitas com agendamento"
+  },
+  {
+    "id": "eletricista-do-bairro",
+    "slug": "eletricista-do-bairro",
+    "status": "published",
+    "featured": true,
+    "name": "Eletricista do Bairro",
+    "category": "Serviços",
+    "shortDescription": "Instalações e pequenos reparos elétricos na sua casa ou no seu negócio.",
+    "description": "Instalação de luminárias, troca de tomadas e manutenção elétrica para residências e pequenos comércios. O atendimento acontece no imóvel do cliente, na Aclimação e nos arredores.\n\nO serviço é combinado previamente, conforme a necessidade e a disponibilidade de horário.",
+    "serviceModes": ["No local do cliente"],
+    "serviceArea": "Aclimação e arredores"
+  },
+  {
+    "id": "moinho-da-colina",
+    "slug": "moinho-da-colina",
+    "status": "published",
+    "featured": false,
+    "name": "Moinho da Colina",
+    "category": "Comer & Beber",
+    "shortDescription": "Pães de fermentação natural e o cheiro de uma nova fornada.",
+    "description": "Pães de fermentação natural preparados em pequenas fornadas, com opções para o café da manhã e a mesa do dia a dia. A seleção inclui pães de casca crocante e acompanhamentos para levar para casa.",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCWFr3m6cBj22Hmsn5NNSH8NazsnA0lc2Qox2a_oZqjwsJNLBh_qH-EstBt3Sb56wJWt9dyRgbOa7CttQ_frzzrMr_xBofcwNeLxzo3jOGzbKSqze5jkDC_1gDrKHLcxeAUo1y6Bg20YjQzX4eBSuThQNNIZnlCRcruW8ySwNZHYy34U0pI7jLr_t6yl_at4551K9j5sLGwlkcEgzh_igsEzMmSxeDeVj6FBeLC0BOrPaUbX7kbeDPe",
+      "alt": "Imagem de Moinho da Colina"
+    },
+    "serviceModes": ["Em espaço próprio"],
+    "address": {
+      "street": "Travessa do Trigo",
+      "number": "72",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP"
+    }
+  },
+  {
+    "id": "quintal-das-suculentas",
+    "slug": "quintal-das-suculentas",
+    "status": "published",
+    "featured": false,
+    "name": "Quintal das Suculentas",
+    "category": "Compras",
+    "shortDescription": "Plantas, vasos e pequenos jardins para levar para casa.",
+    "description": "Plantas, vasos e pequenos jardins para levar para casa.",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBsJnYTtVotB9Hy68uLF4uHVvPo3nbJRdH-Zt0mr4V-3hz3ThTOx88OGQNaqtNf8oKYj1oiWbyVp-zU6A7CvASCAVY0mDDPicplExPtHtZCBFqlyIei5FL4-PMV4mogWddWzkmV1Y_Co1Wx2YdCmowGdNkCDdqVft2v4OUILaDgIw6HIJmj4pEKB7DwVklNw8oS0Jh5vmMCzH273LTCsrR9H7zHI7_nqBw44by8gusVnX-of3g-sahH",
+      "alt": "Imagem de Quintal das Suculentas"
+    },
+    "serviceModes": ["Em espaço próprio"]
+  },
+  {
+    "id": "espaco-yoga-aclimacao",
+    "slug": "espaco-yoga-aclimacao",
+    "status": "published",
+    "featured": false,
+    "name": "Espaço Yoga Aclimação",
+    "category": "Saúde & Bem-estar",
+    "shortDescription": "Movimento, respiração e um momento de cuidado no dia.",
+    "description": "Movimento, respiração e um momento de cuidado no dia.",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDiNhqqzGh5ZNLjKKL-wI4c5byyxLqfgmmTwgTIwA0kJCUIeVEvvXfd4aGbnMEdU2bnYA81s_0qjCicRlgWQqZMn00jXRyzN6Patehn3voCCAO3RSccrRF7rIqRbQMOxNDZx5jyS9nPz_t4la4-Q2tBT2e2xsX6_cp3YtboJWYBhcCkMh0G1EUI-7JpVa0bNCStiQNWYKGI9eMbq0bya8FFYbYdJ9XahxY-SvUF3RPz3pwj9JjOcGQr",
+      "alt": "Imagem de Espaço Yoga Aclimação"
+    },
+    "serviceModes": ["Em espaço próprio"]
+  },
+  {
+    "id": "oficina-mecanica-do-bairro",
+    "slug": "oficina-mecanica-do-bairro",
+    "status": "published",
+    "featured": false,
+    "name": "Oficina Mecânica do Bairro",
+    "category": "Serviços",
+    "shortDescription": "Um exemplo de serviço de proximidade para o cotidiano do bairro.",
+    "description": "Um exemplo de serviço de proximidade para o cotidiano do bairro.",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAuP2S_e7N2hUllMqMSnwS4DRy-kNL32o7EQUGxP4JbHvAbW4EFg9cfrNDbtJBZyuLCEzCDk8ycJqWyJF-8fZXjeTlgXlCVb2ga_WSTd-V7Zy4ySu_qQQ_XBkzU7aeZnYvhmodBeb7CyGxfELCMrI3x4rYr1mJywoSbi0nMJiyvjoReNcjUBFRig-ej3phIYnRS-dMq9b-c5zZU4BYYDtLgQpjarTeoXtjpTDkROqdiskI0qeeVNA6w",
+      "alt": "Imagem de Oficina Mecânica do Bairro"
+    },
+    "serviceModes": ["Em espaço próprio"]
+  }
+]

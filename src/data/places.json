@@ -1,0 +1,69 @@
+[
+  {
+    "id": "parque-da-aclimacao",
+    "slug": "parque-da-aclimacao",
+    "status": "published",
+    "featured": true,
+    "name": "Parque da Aclimação",
+    "category": "Natureza",
+    "shortDescription": "Uma pausa entre o lago, as árvores e os caminhos do bairro.",
+    "description": "O lago e os caminhos arborizados são o ponto de partida para explorar o parque. Há áreas de descanso, playgrounds, espaços para piquenique e uma concha acústica.\n\n### Um pouco de história\n\nO espaço foi idealizado por Carlos Botelho, inspirado no Jardin d’Acclimatation de Paris. O parque foi tombado em 1986.\n\n### Antes de ir\n\nA Prefeitura informa acesso por rampa, banheiros acessíveis e áreas de circulação com acessibilidade. Consulte a administração para orientações sobre o percurso que pretende fazer.\n\nBicicletas, patins e skates não são permitidos no parque. Confira as regras e eventuais alterações de funcionamento no site oficial.\n\nO endereço indicado corresponde ao portão 1. Há outros acessos, incluindo o portão 3, na Rua Pedra Azul.",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuA3yfjTqeCg6WvqGgZZDrZiobVpR3guLh60m990KaOchJY0jG7M_L5D6Qv17DZxnn27yYGBEFTKh_eh1sRZBEmZd20PG-nh0KECE2TRQ4Z2Yyki3_-orAdj_0PTf77XNfkzJYr9Qi2wl497hACTkzsg5v6aOyHvmDSKFTjuciENMAsimCxiaxh_HwuxWvkjwS_-OB-HDsh4qh0_FyDelT4GZK9XOX7htkDX67tySR2tsW5CEvz4WFfd",
+      "alt": "Imagem de Parque da Aclimação"
+    },
+    "address": {
+      "street": "Rua Muniz de Sousa",
+      "number": "1119",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP"
+    },
+    "openingHours": "Todos os dias, das 05:00 às 20:00.",
+    "phone": "(11) 3208-4042",
+    "website": "https://prefeitura.sp.gov.br/web/meio_ambiente/w/parques/regiao_centrooeste/5728",
+    "moreInformation": [
+      {
+        "title": "Saiba mais sobre o lugar no site da Prefeitura",
+        "url": "https://prefeitura.sp.gov.br/web/meio_ambiente/w/parques/regiao_centrooeste/5728"
+      }
+    ]
+  },
+  {
+    "id": "biblioteca-raul-bopp",
+    "slug": "biblioteca-raul-bopp",
+    "status": "published",
+    "featured": true,
+    "name": "Biblioteca Raul Bopp",
+    "category": "Arte & Cultura",
+    "shortDescription": "Livros e descobertas para um passeio com tempo de sobra.",
+    "description": "A Biblioteca Raul Bopp reúne um acervo geral e uma coleção temática dedicada ao meio ambiente. É uma oportunidade de combinar o passeio pelo bairro com leitura e novas descobertas.\n\n### Explore o acervo\n\nConsulte o site da biblioteca para conhecer os serviços e a programação cultural. Os horários das atividades podem ser diferentes do horário de funcionamento.\n\n### Planeje a visita\n\nConfira as informações oficiais antes de sair, especialmente em feriados.",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBL805VEQiSrBeDuB8CAHtvvy1SSPDppZqqHhD0Zw3MOmB14D8KeIHwKjEpchafkpOfYy1qzQ27k3ZqJZbiaIr1fVZHy2kbuWRQ9asso_pQSzY6tr9CLxUSvwtqXcMTBjefINEjS0usv5TibwMcHyNdxmht9HkkbDjHmENY_5ypRNxCSKwj3oS5IaeADsOA6vdB05CQe1_E63LrzVHzkz66TfW1E_lznWr6T5WmBMgsGjz4WktFzNEV",
+      "alt": "Imagem de Biblioteca Raul Bopp"
+    },
+    "openingHours": "Segunda a sexta, das 09:00 às 18:00. Sábados, das 10:00 às 14:00.",
+    "website": "https://prefeitura.sp.gov.br/cultura/bibliotecas/bibliotecas_bairro/bibliotecas_m_z/raulbopp/",
+    "moreInformation": [
+      {
+        "title": "Saiba mais sobre o lugar no site da Prefeitura",
+        "url": "https://prefeitura.sp.gov.br/cultura/bibliotecas/bibliotecas_bairro/bibliotecas_m_z/raulbopp/"
+      }
+    ]
+  },
+  {
+    "id": "vilas-da-rua-pedra-azul",
+    "slug": "vilas-da-rua-pedra-azul",
+    "status": "published",
+    "featured": true,
+    "name": "Vilas da Rua Pedra Azul",
+    "category": "Arquitetura",
+    "shortDescription": "Um convite para observar os detalhes das ruas e suas casas.",
+    "description": "Um passeio a pé pode revelar detalhes que passam despercebidos: desenhos de portões, fachadas e a relação das casas com a rua. A proposta é observar a paisagem a partir das calçadas e dos espaços públicos.\n\n### Um olhar atento\n\nRespeite a privacidade dos moradores e mantenha os acessos livres. Esta indicação não inclui visita ao interior de imóveis ou entrada em áreas particulares.\n\nPercurso externo pelas áreas públicas. Não há visita interna organizada por este portal.",
+    "coverImage": {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDYPt9TY0xkAcMxdNwW2X4wmxmFAnZStQ4rc5N2B3PybaT-heEW_QMzJPCUxrH9SFK_j_-L4wjOBQ680GkrFH4XS7hebR__8pz_2yXm41mdPFCm4xP3qj2bku0eUDl69OKGogCXxLaouv4KAhUqXyycEMZOWltoF0C7ebxvLSTpLlUnO-IJ9hB7B4JXvjMsHuAOtz0g1u_WlmqdVw-57sq_fn38gsfpB0SawKuSfDLjHxY6Jj6muOzI",
+      "alt": "Imagem de Vilas da Rua Pedra Azul"
+    },
+    "admission": "Observação pela via pública"
+  }
+]
