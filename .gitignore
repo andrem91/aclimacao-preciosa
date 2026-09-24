@@ -4,3 +4,5 @@ out/
 *.tsbuildinfo
 .env*
 !.env.example
+stitch_aclima_o_preciosa_portal_design/
+stitch_guia_aclima_o_preciosa/
