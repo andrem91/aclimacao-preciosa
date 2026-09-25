@@ -1,3 +1,13 @@
+import {
+  filterInput,
+  filterLabel,
+  pageContainer,
+  buttonStyles,
+  resultSummary,
+  cardGrid,
+  emptyState,
+  textLink,
+} from "@/components/styles";
 import Link from "next/link";
 import { connection } from "next/server";
 import { getEvents } from "@/lib/content";
@@ -43,7 +53,7 @@ export default async function Page({
       periodo: filters.period,
     }).toString();
   return (
-    <div className="container listing-page">
+    <div className={`${pageContainer} min-h-[65vh] pb-[55px] sm:pb-[85px]`}>
       <EventRefresh />
       <PageIntro
         eyebrow="Encontre seu próximo programa"
@@ -53,12 +63,13 @@ export default async function Page({
       <form
         action="/eventos"
         method="get"
-        className="event-filters"
+        className="grid grid-cols-1 items-end gap-4 rounded-lg border border-line bg-surface p-[18px] min-[601px]:grid-cols-2 min-[601px]:p-6 lg:grid-cols-[1.4fr_1fr_1fr_auto]"
         key={returnTo}
       >
-        <label>
+        <label className={filterLabel}>
           Buscar evento
           <input
+            className={filterInput}
             name="q"
             type="search"
             defaultValue={filters.q}
@@ -66,18 +77,26 @@ export default async function Page({
             maxLength={150}
           />
         </label>
-        <label>
+        <label className={filterLabel}>
           Categoria
-          <select name="categoria" defaultValue={filters.category}>
+          <select
+            className={filterInput}
+            name="categoria"
+            defaultValue={filters.category}
+          >
             <option value="">Todas as categorias</option>
             {[...new Set(events.map((x) => x.category))].sort().map((c) => (
               <option key={c}>{c}</option>
             ))}
           </select>
         </label>
-        <label>
+        <label className={filterLabel}>
           Período
-          <select name="periodo" defaultValue={filters.period}>
+          <select
+            className={filterInput}
+            name="periodo"
+            defaultValue={filters.period}
+          >
             {periods.map((p) => (
               <option key={p.value} value={p.value}>
                 {p.label}
@@ -85,11 +104,11 @@ export default async function Page({
             ))}
           </select>
         </label>
-        <button className="button" type="submit">
+        <button className={buttonStyles()} type="submit">
           Filtrar eventos
         </button>
       </form>
-      <div className="event-results">
+      <div className={resultSummary}>
         <h2>{periods.find((p) => p.value === filters.period)?.label}</h2>
         <span role="status">
           {results.length}{" "}
@@ -98,7 +117,9 @@ export default async function Page({
         <Link href="/eventos">Limpar filtros</Link>
       </div>
       {results.length ? (
-        <div className="card-grid">
+        <div
+          className={`${cardGrid} gap-y-[42px] sm:gap-y-[42px] lg:gap-y-[42px]`}
+        >
           {results.map((item, i) => (
             <EventCard
               item={item}
@@ -110,19 +131,19 @@ export default async function Page({
           ))}
         </div>
       ) : (
-        <div className="empty-state">
+        <div className={emptyState}>
           <h2>Nenhum evento por aqui ainda</h2>
           <p>
             Experimente outra categoria, outro período ou uma busca diferente.
           </p>
-          <Link href="/eventos" className="text-link">
+          <Link href="/eventos" className={textLink}>
             Ver próximos eventos
           </Link>
         </div>
       )}
-      <div className="event-submit">
+      <div className="mt-[45px] flex flex-wrap justify-between gap-4 rounded-lg bg-[#e5ebe0] p-6">
         <p>Vai organizar um encontro no bairro?</p>
-        <Link href="/participe?tipo=evento" className="text-link">
+        <Link href="/participe?tipo=evento" className={textLink}>
           Divulgue seu evento
         </Link>
       </div>

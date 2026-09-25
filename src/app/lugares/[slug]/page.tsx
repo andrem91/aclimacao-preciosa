@@ -1,3 +1,14 @@
+import {
+  pageContainer,
+  backLink,
+  detailHeading,
+  eyebrow,
+  introCopy,
+  buttonStyles,
+  prose,
+  relatedSection,
+  cardGrid,
+} from "@/components/styles";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, MapPin } from "lucide-react";
@@ -54,22 +65,24 @@ export default async function Page({ params, searchParams }: Props) {
     safeWebUrl(link.url),
   );
   return (
-    <div className="container detail-page">
-      <Link href={back} className="back-link">
+    <div className={`${pageContainer} pb-[78px]`}>
+      <Link href={back} className={backLink}>
         <ArrowLeft size={16} aria-hidden="true" />
         Voltar aos lugares
       </Link>
-      <header className="detail-heading">
-        <p className="eyebrow">{x.category}</p>
+      <header className={detailHeading}>
+        <p className={`${eyebrow} text-emerald text-xs tracking-[0.16em]`}>
+          {x.category}
+        </p>
         <h1>{x.name}</h1>
-        <p className="intro-copy">{x.shortDescription}</p>
+        <p className={introCopy}>{x.shortDescription}</p>
       </header>
       <div
-        className={`place-detail-layout ${hasInfo ? "" : "place-detail-single"}`}
+        className={`flex flex-col gap-7 md:grid md:items-start md:gap-9 ${hasInfo ? "md:grid-cols-[minmax(0,1fr)_350px]" : "mx-auto max-w-[800px] md:grid-cols-1"}`}
       >
         {hasInfo && (
           <aside
-            className="place-info-panel"
+            className="w-full min-w-0 rounded-lg border border-line bg-surface p-[22px] wrap-anywhere md:col-start-2 md:row-start-1 md:p-[26px] [&_h2]:mb-[18px] [&_h2]:text-[27px]"
             aria-label="Informações de visitação"
           >
             <h2>Planeje sua visita</h2>
@@ -80,7 +93,7 @@ export default async function Page({ params, searchParams }: Props) {
             </dl>
             {address && (
               <a
-                className="button place-map"
+                className={`${buttonStyles()} mt-5 w-full`}
                 href={
                   "https://www.google.com/maps/search/?api=1&query=" +
                   encodeURIComponent(address)
@@ -96,11 +109,12 @@ export default async function Page({ params, searchParams }: Props) {
               item={x}
               label="Contatos do lugar"
               appearance="links"
+              layout="panel"
             />
           </aside>
         )}
-        <div className="place-story">
-          <div className="place-detail-image">
+        <div className="w-full min-w-0 md:col-start-1 md:row-start-1">
+          <div className="relative aspect-[1.6] overflow-hidden rounded-lg">
             <Image
               src={x.coverImage.src}
               alt={x.coverImage.alt}
@@ -110,14 +124,14 @@ export default async function Page({ params, searchParams }: Props) {
               sizes="(max-width: 900px) 92vw, 720px"
             />
           </div>
-          <article className="prose place-about">
+          <article className={`${prose} mt-[30px]`}>
             <h2>Sobre o lugar</h2>
             <FormattedText text={x.description} />
           </article>
           <Gallery item={{ gallery }} />
           {!!moreInformation?.length && (
             <section
-              className="place-more-information"
+              className="mt-8 border-t border-line pt-5 text-sm [&_h2]:mb-3 [&_h2]:text-base [&_h2]:font-semibold [&_li]:mt-3 [&_li]:grid [&_li]:gap-[5px] [&_a]:text-emerald [&_a]:underline [&_a]:wrap-anywhere"
               aria-label="Mais informações"
             >
               <h2>Mais informações</h2>
@@ -139,12 +153,12 @@ export default async function Page({ params, searchParams }: Props) {
         </div>
       </div>
       {!!related.length && (
-        <section className="related-section">
+        <section className={relatedSection}>
           <SectionHeader
             eyebrow="Continue a descoberta"
             title="Outros lugares para conhecer"
           />
-          <div className="card-grid">
+          <div className={cardGrid}>
             {related.map((item) => (
               <PlaceCard key={item.id} item={item} />
             ))}

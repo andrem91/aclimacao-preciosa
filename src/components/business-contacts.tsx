@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { buttonStyles } from "@/components/styles";
 import { Phone, MessageCircle, Globe, Mail, Copy } from "lucide-react";
 import type { Establishment } from "@/types/content";
 
@@ -38,7 +39,9 @@ export function BusinessContacts({
   item,
   label = "Contatos do negócio",
   appearance = "buttons",
+  layout = "business",
 }: {
+  layout?: "business" | "panel";
   appearance?: "buttons" | "links";
   label?: string;
   item: Pick<
@@ -47,6 +50,10 @@ export function BusinessContacts({
   >;
 }) {
   const [copyStatus, setCopyStatus] = useState("");
+  const contactLink =
+    "inline-flex min-h-11 min-w-0 items-center gap-2.5 text-emerald hover:underline [&_span]:wrap-anywhere";
+  const iconLink =
+    "inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-line text-emerald hover:bg-[#e5ebe0]";
   const website = webUrl(item.website);
   const phone = item.phone?.replace(/[^+\d]/g, "");
   const whatsapp = item.whatsapp?.replace(/\D/g, "");
@@ -71,19 +78,24 @@ export function BusinessContacts({
   }
 
   return (
-    <section className="business-contacts" aria-label={label}>
-      <h2>Contato</h2>
+    <section
+      className={
+        layout === "business"
+          ? "order-0 grid w-full gap-3.5 rounded-lg border border-line bg-surface p-5 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:has-[+section]:mb-6 md:has-[+section]:border-b md:has-[+section]:pb-6"
+          : "mt-6 grid gap-[18px] border-t border-line pt-[22px]"
+      }
+      aria-label={label}
+    >
+      <h2 className="text-[26px]">Contato</h2>
       {(whatsapp || phone) && (
-        <div
-          className={
-            appearance === "links"
-              ? "business-contact-details"
-              : "business-direct"
-          }
-        >
+        <div className={appearance === "links" ? "grid gap-3" : "grid gap-2.5"}>
           {whatsapp && (
             <a
-              className={appearance === "buttons" ? "button" : undefined}
+              className={
+                appearance === "buttons"
+                  ? `${buttonStyles("outline")} w-full`
+                  : contactLink
+              }
               href={`https://wa.me/${whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -94,7 +106,11 @@ export function BusinessContacts({
           )}
           {phone && (
             <a
-              className={appearance === "buttons" ? "button" : undefined}
+              className={
+                appearance === "buttons"
+                  ? `${buttonStyles("outline")} w-full`
+                  : contactLink
+              }
               href={`tel:${phone}`}
               title={item.phone}
             >
@@ -106,9 +122,10 @@ export function BusinessContacts({
         </div>
       )}
       {(website || email) && (
-        <div className="business-contact-details">
+        <div className="grid gap-2">
           {website && (
             <a
+              className={contactLink}
               href={website.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -119,12 +136,13 @@ export function BusinessContacts({
             </a>
           )}
           {email && (
-            <div className="business-email">
-              <a href={`mailto:${email}`}>
+            <div className="flex min-w-0 flex-wrap items-center gap-2">
+              <a className={contactLink} href={`mailto:${email}`}>
                 <Mail size={19} aria-hidden="true" />
                 <span>{email}</span>
               </a>
               <button
+                className={iconLink}
                 type="button"
                 onClick={copyEmail}
                 aria-label="Copiar e-mail"
@@ -132,16 +150,19 @@ export function BusinessContacts({
               >
                 <Copy size={18} aria-hidden="true" />
               </button>
-              <span role="status">{copyStatus}</span>
+              <span className="text-sm" role="status">
+                {copyStatus}
+              </span>
             </div>
           )}
         </div>
       )}
       {!!socials.length && (
-        <div className="business-socials">
-          <span>Redes sociais</span>
+        <div className="flex flex-wrap items-center gap-2.5">
+          <span className="w-full text-sm">Redes sociais</span>
           {socials.map((network) => (
             <a
+              className={iconLink}
               key={network.platform}
               href={network.href}
               target="_blank"

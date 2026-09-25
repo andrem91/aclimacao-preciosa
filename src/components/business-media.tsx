@@ -18,10 +18,11 @@ export function BusinessMedia({
     .join("");
   return (
     <div
-      className={`business-media ${item.logo ? "business-logo" : "business-initials"} ${detail ? "business-media-detail" : ""}`}
+      className={`relative shrink-0 overflow-hidden ${detail ? "size-28 rounded-[10px] sm:size-36" : "size-24 rounded-lg"} ${item.logo ? "border border-line bg-white" : "grid place-items-center bg-[#e5ebe0]"}`}
     >
       {item.logo ? (
         <Image
+          className="object-contain p-2"
           src={item.logo.src}
           alt={item.logo.alt}
           fill
@@ -30,7 +31,7 @@ export function BusinessMedia({
         />
       ) : (
         <span
-          className="business-monogram"
+          className={`grid place-items-center rounded-full border border-[#a9bca4] font-serif text-[#345741] ${detail ? "size-20 text-[34px] sm:size-[104px] sm:text-[42px]" : "size-[68px] text-[29px]"}`}
           aria-label={`Iniciais de ${item.name}`}
         >
           {initials}

@@ -1,3 +1,4 @@
+import { pageContainer } from "@/components/styles";
 import { getEstablishments } from "@/lib/content";
 import { PageIntro } from "@/components/ui";
 import { EstablishmentGrid } from "@/components/filters";
@@ -7,7 +8,7 @@ export const metadata = {
 };
 export default function Page() {
   return (
-    <div className="container listing-page">
+    <div className={`${pageContainer} min-h-[65vh] pb-[55px] sm:pb-[85px]`}>
       <PageIntro
         eyebrow="Negócios do bairro"
         title="Negócios da Aclimação"

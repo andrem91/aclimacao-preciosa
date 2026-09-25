@@ -33,13 +33,13 @@ for (const route of routes) {
   assert.ok(!html.includes("\uFFFD"), `${route}: invalid text encoding`);
   if (route === "/negocios") {
     assert.ok(
-      !html.includes('class="card-image"'),
+      !html.includes("data-business-photo"),
       "Business cards must not use photo banners",
     );
   }
   if (route === "/negocios/cafe-livraria-da-praca") {
     assert.ok(
-      html.includes("business-cover") &&
+      html.includes("data-business-photo") &&
         html.includes("/images/cafe-livraria-da-praca.svg"),
     );
     assert.ok(html.includes('href="mailto:contato@example.com"'));
@@ -54,7 +54,7 @@ for (const route of routes) {
       assert.ok(html.includes(`aria-label="${name}"`), `Missing ${name}`);
   }
   if (route === "/negocios/atelie-mariana-prado") {
-    assert.ok(!html.includes('class="detail-cover business-cover"'));
+    assert.ok(!html.includes("data-business-photo"));
     assert.ok(html.includes('aria-label="Instagram"'));
     assert.ok(!html.includes('aria-label="YouTube"'));
   }
@@ -64,18 +64,18 @@ for (const route of routes) {
         html.includes("Aclimação e arredores"),
     );
     assert.ok(
-      !html.includes("<dt>Endereço</dt>"),
+      !/<dt[^>]*>Endereço<\/dt>/.test(html),
       "Mobile provider must not display an address",
     );
-    assert.ok(html.includes("business-monogram"), "Missing initials fallback");
+    assert.ok(
+      html.includes('aria-label="Iniciais de Eletricista do Bairro"'),
+      "Missing initials fallback",
+    );
     assert.ok(
       !html.includes('aria-label="Contatos do negócio"'),
       "Empty contact section",
     );
-    assert.ok(
-      !html.includes('class="detail-cover business-cover"'),
-      "Empty photo section",
-    );
+    assert.ok(!html.includes("data-business-photo"), "Empty photo section");
   }
   if (route === "/negocios/atelie-mariana-prado")
     assert.ok(
@@ -122,7 +122,7 @@ assert.ok(
 assert.ok(detail.includes("28/11/2026") && detail.includes("13/12/2026"));
 assert.ok(
   !detail.includes("Horário de São Paulo") &&
-    !detail.includes('class="event-participation"'),
+    !/>\s*(Inscreva-se|Ver ingresso)\s*</.test(detail),
 );
 assert.ok(
   detail.includes("<strong>") && detail.includes("Prepare-se para o encontro"),
@@ -194,5 +194,16 @@ assert.ok(
     !contribution.includes("Nome do evento ou experiência"),
 );
 
-assert.ok(!park.includes("Consultado em") && !park.includes("<dt>Acesso</dt>"));
-assert.ok(!park.includes('class="button" href="tel:'));
+assert.ok(
+  !park.includes("Consultado em") && !/<dt[^>]*>Acesso<\/dt>/.test(park),
+);
+const phoneLinks = [
+  ...park.matchAll(/<a\b[^>]*href="tel:[^"]*"[^>]*>([\s\S]*?)<\/a>/g),
+];
+assert.ok(phoneLinks.length > 0, "Missing place phone link");
+for (const [, contents] of phoneLinks) {
+  assert.ok(
+    !contents.replace(/<[^>]*>/g, "").includes("Ligar"),
+    "Place phone should be a simple contact link",
+  );
+}

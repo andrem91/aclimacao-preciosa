@@ -53,10 +53,19 @@ src/components/           componentes de interface
 src/data/                 negócios, eventos e lugares em JSON
 src/lib/                  leitura, validação e regras de domínio
 src/types/                tipos compartilhados
-src/app/globals.css       tokens e estilos responsivos
+src/app/globals.css       tema e estilos globais essenciais
+src/components/styles.ts padrões compartilhados de classes Tailwind
 public/                   imagens e assets locais
 scripts/                  verificações automatizadas
 ```
+
+## Estilos da interface
+
+O portal usa **Tailwind CSS 4** como padrão. Layout, espaçamentos, cores, estados e responsividade ficam nas classes dos componentes. Botões, containers e outros padrões recorrentes compartilham receitas em `src/components/styles.ts`, sem uma biblioteca extra.
+
+O `globals.css` contém apenas a importação do Tailwind, os tokens do tema e a base global de tipografia e acessibilidade. Se alguma necessidade futura exigir CSS próprio, use um arquivo `*.module.css` junto do componente, evitando estilos de componentes no global.
+
+Os breakpoints preservam o layout do portal: `sm` a partir de 761 px, `md` de 901 px, `lg` de 1001 px e `2xl` de 1500 px. São valores personalizados, diferentes dos padrões do Tailwind.
 
 ## Conteúdo
 

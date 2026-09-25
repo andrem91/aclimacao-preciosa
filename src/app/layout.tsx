@@ -22,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" data-scroll-behavior="smooth">
       <body>
-        <a className="skip-link" href="#conteudo">
+        <a
+          className="fixed -top-[100px] left-2.5 z-100 bg-white px-5 py-3 focus:top-2.5"
+          href="#conteudo"
+        >
           Pular para o conteúdo
         </a>
         <Header />

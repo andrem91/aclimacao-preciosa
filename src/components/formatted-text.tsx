@@ -37,7 +37,7 @@ function Inline({ text }: { text: string }) {
 }
 export function FormattedText({ text }: { text: string }) {
   return (
-    <div className="formatted-text">
+    <div className="[&_a]:text-emerald [&_a]:underline [&_a]:wrap-anywhere">
       {text
         .replaceAll("\r\n", "\n")
         .split(/\n\s*\n/)
@@ -46,7 +46,7 @@ export function FormattedText({ text }: { text: string }) {
           const lines = block.split("\n");
           if (lines.every((line) => /^[-*] /.test(line)))
             return (
-              <ul key={index}>
+              <ul className="my-4 list-disc pl-6" key={index}>
                 {lines.map((line, i) => (
                   <li key={i}>
                     <Inline text={line.slice(2)} />
@@ -56,7 +56,7 @@ export function FormattedText({ text }: { text: string }) {
             );
           if (lines.every((line) => /^\d+\. /.test(line)))
             return (
-              <ol key={index}>
+              <ol className="my-4 list-decimal pl-6" key={index}>
                 {lines.map((line, i) => (
                   <li key={i}>
                     <Inline text={line.replace(/^\d+\. /, "")} />
@@ -66,7 +66,7 @@ export function FormattedText({ text }: { text: string }) {
             );
           if (/^#{1,3} [^\n]+$/.test(block))
             return (
-              <h3 key={index}>
+              <h3 className="mt-6 mb-3 text-2xl leading-[1.2]" key={index}>
                 <Inline text={block.replace(/^#{1,3} /, "")} />
               </h3>
             );

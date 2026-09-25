@@ -1,4 +1,6 @@
 "use client";
+import { pageContainer, buttonStyles } from "@/components/styles";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
@@ -18,7 +20,7 @@ export function Header() {
     url === "/" ? pathname === "/" : pathname.startsWith(url);
   return (
     <header
-      className="site-header"
+      className="sticky top-0 z-30 border-b border-line bg-paper"
       onKeyDown={(e) => {
         if (e.key === "Escape") {
           setOpen(false);
@@ -26,7 +28,9 @@ export function Header() {
         }
       }}
     >
-      <div className="container header-inner">
+      <div
+        className={`${pageContainer} flex h-[76px] items-center justify-between gap-[18px] sm:h-[89px] lg:gap-6`}
+      >
         <Link
           href="/"
           aria-label="Aclimação Preciosa — início"
@@ -34,24 +38,31 @@ export function Header() {
         >
           <Brand />
         </Link>
-        <nav className="desktop-nav" aria-label="Navegação principal">
+        <nav
+          className="ml-auto mr-5 hidden items-center gap-[27px] self-stretch lg:flex"
+          aria-label="Navegação principal"
+        >
           {links.map(([url, label]) => (
             <Link
               key={url}
               href={url}
+              className="relative py-3 text-sm font-medium whitespace-nowrap hover:text-emerald aria-[current=page]:text-emerald aria-[current=page]:after:absolute aria-[current=page]:after:inset-x-0 aria-[current=page]:after:bottom-[5px] aria-[current=page]:after:h-px aria-[current=page]:after:bg-emerald"
               aria-current={active(url) ? "page" : undefined}
             >
               {label}
             </Link>
           ))}
         </nav>
-        <Link className="button button-small header-join" href="/participe">
+        <Link
+          className={`${buttonStyles("primary", "small")} max-lg:hidden`}
+          href="/participe"
+        >
           Participe <ArrowUpRight size={15} />
         </Link>
         <button
           ref={trigger}
           type="button"
-          className="menu-toggle"
+          className="flex size-11 items-center justify-center border-0 bg-transparent text-emerald lg:hidden"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
           aria-controls="mobile-nav"
@@ -63,7 +74,7 @@ export function Header() {
       {open && (
         <nav
           id="mobile-nav"
-          className="mobile-nav container"
+          className={`pb-5 lg:hidden ${pageContainer}`}
           aria-label="Navegação mobile"
         >
           {[...links, ["/participe", "Participe"]].map(([url, label]) => (
