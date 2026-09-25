@@ -65,7 +65,7 @@ O portal usa **Tailwind CSS 4** como padrão. Layout, espaçamentos, cores, esta
 
 O `globals.css` contém apenas a importação do Tailwind, os tokens do tema e a base global de tipografia e acessibilidade. Se alguma necessidade futura exigir CSS próprio, use um arquivo `*.module.css` junto do componente, evitando estilos de componentes no global.
 
-Os breakpoints preservam o layout do portal: `xs` a partir de 601 px, `sm` de 761 px, `md` de 901 px, `lg` de 1001 px e `2xl` de 1500 px. São valores personalizados, diferentes dos padrões do Tailwind, e devem ser usados pelos nomes configurados em vez de novos valores arbitrários.
+Os breakpoints seguem a escala padrão do Tailwind: `sm` a partir de 640 px, `md` de 768 px, `lg` de 1024 px, `xl` de 1280 px e `2xl` de 1536 px. Evite criar valores arbitrários para novas telas.
 
 ## Conteúdo
 

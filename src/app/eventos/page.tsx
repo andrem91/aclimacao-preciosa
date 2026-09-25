@@ -53,7 +53,7 @@ export default async function Page({
       periodo: filters.period,
     }).toString();
   return (
-    <div className={`${pageContainer} min-h-[65vh] pb-[55px] sm:pb-[85px]`}>
+    <div className={`${pageContainer} min-h-[65vh] pb-[55px] md:pb-[85px]`}>
       <EventRefresh />
       <PageIntro
         eyebrow="Encontre seu próximo programa"
@@ -63,7 +63,7 @@ export default async function Page({
       <form
         action="/eventos"
         method="get"
-        className="grid grid-cols-1 items-end gap-4 rounded-lg border border-line bg-surface p-[18px] xs:grid-cols-2 xs:p-6 lg:grid-cols-[1.4fr_1fr_1fr_auto]"
+        className="grid grid-cols-1 items-end gap-4 rounded-lg border border-line bg-surface p-[18px] sm:grid-cols-2 sm:p-6 xl:grid-cols-[1.4fr_1fr_1fr_auto]"
         key={returnTo}
       >
         <label className={filterLabel}>
@@ -118,7 +118,7 @@ export default async function Page({
       </div>
       {results.length ? (
         <div
-          className={`${cardGrid} gap-y-[42px] sm:gap-y-[42px] lg:gap-y-[42px]`}
+          className={`${cardGrid} gap-y-[42px] md:gap-y-[42px] xl:gap-y-[42px]`}
         >
           {results.map((item, i) => (
             <EventCard

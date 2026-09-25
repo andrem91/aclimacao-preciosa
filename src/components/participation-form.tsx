@@ -47,13 +47,13 @@ export function ParticipationForm({
   return (
     <>
       <div
-        className="mt-[5px] mb-[27px] grid grid-cols-1 gap-3 sm:mb-10 sm:grid-cols-3 sm:gap-5"
+        className="mt-[5px] mb-[27px] grid grid-cols-1 gap-3 md:mb-10 md:grid-cols-3 md:gap-5"
         role="group"
         aria-label="Tipo de contribuição"
       >
         {choices.map((c) => (
           <button
-            className="grid grid-cols-[28px_1fr] gap-x-[17px] gap-y-1 rounded border border-line bg-transparent p-[18px] text-left text-emerald aria-pressed:border-emerald aria-pressed:bg-[#e7ecdf] sm:flex sm:flex-col sm:items-start sm:gap-0 sm:p-[25px]"
+            className="grid grid-cols-[28px_1fr] gap-x-[17px] gap-y-1 rounded border border-line bg-transparent p-[18px] text-left text-emerald aria-pressed:border-emerald aria-pressed:bg-[#e7ecdf] md:flex md:flex-col md:items-start md:gap-0 md:p-[25px]"
             type="button"
             key={c.id}
             aria-pressed={type === c.id}
@@ -63,28 +63,28 @@ export function ParticipationForm({
             }}
           >
             <c.icon size={25} />
-            <h2 className="text-[21px] sm:mt-[17px] sm:mb-2.5 sm:text-[23px]">
+            <h2 className="text-[21px] md:mt-[17px] md:mb-2.5 md:text-[23px]">
               {c.label}
             </h2>
-            <p className="col-start-2 flex-1 text-sm text-muted sm:text-base">
+            <p className="col-start-2 flex-1 text-sm text-muted md:text-base">
               {c.text}
             </p>
-            <span className="col-start-2 mt-2.5 flex items-center gap-[13px] text-xs font-[650] sm:mt-[19px]">
+            <span className="col-start-2 mt-2.5 flex items-center gap-[13px] text-xs font-[650] md:mt-[19px]">
               {type === c.id ? "Selecionado" : "Selecionar"}{" "}
               <ArrowRight size={16} />
             </span>
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 gap-[30px] sm:grid-cols-[minmax(0,1fr)_250px] lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-[55px]">
+      <div className="grid grid-cols-1 gap-[30px] md:grid-cols-[minmax(0,1fr)_250px] xl:grid-cols-[minmax(0,1fr)_300px] xl:gap-[55px]">
         <section
-          className="scroll-mt-[115px] rounded border border-line bg-[#fffdf8] px-[18px] py-[23px] sm:p-[35px]"
+          className="scroll-mt-[115px] rounded border border-line bg-[#fffdf8] px-[18px] py-[23px] md:p-[35px]"
           id="contato"
         >
           <p className={`${eyebrow} text-emerald text-xs tracking-[0.16em]`}>
             Sua contribuição
           </p>
-          <h2 className="mt-[9px] text-[26px] sm:text-[29px]">
+          <h2 className="mt-[9px] text-[26px] md:text-[29px]">
             {choices.find((c) => c.id === type)?.label}
           </h2>
           <p className="mt-[23px] mb-7 border-l-2 border-[#849877] bg-[#f0f1e8] px-[17px] py-3.5 text-base text-[#54634f]">
@@ -100,7 +100,7 @@ export function ParticipationForm({
               requestAnimationFrame(() => result.current?.focus());
             }}
           >
-            <div className="grid grid-cols-1 gap-[21px] sm:grid-cols-2 sm:gap-[18px]">
+            <div className="grid grid-cols-1 gap-[21px] md:grid-cols-2 md:gap-[18px]">
               <label className={formLabel}>
                 Seu nome
                 <input
@@ -155,7 +155,7 @@ export function ParticipationForm({
             )}
             {type === "evento" && (
               <>
-                <div className="grid grid-cols-1 gap-[21px] sm:grid-cols-2 sm:gap-[18px]">
+                <div className="grid grid-cols-1 gap-[21px] md:grid-cols-2 md:gap-[18px]">
                   <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
                     Data do evento
                     <input
@@ -199,7 +199,7 @@ export function ParticipationForm({
               />
             </label>
             <button
-              className={`${buttonStyles()} w-full self-start sm:w-auto`}
+              className={`${buttonStyles()} w-full self-start md:w-auto`}
               type="submit"
             >
               Testar formulário <ArrowRight size={17} />
@@ -228,7 +228,7 @@ export function ParticipationForm({
           </form>
         </section>
         <aside
-          className="scroll-mt-[115px] py-2.5 sm:pt-[25px] sm:pb-0"
+          className="scroll-mt-[115px] py-2.5 md:pt-[25px] md:pb-0"
           id="sobre"
         >
           <p className={`${eyebrow} text-emerald text-xs tracking-[0.16em]`}>

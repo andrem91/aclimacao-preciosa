@@ -54,27 +54,29 @@ export default async function Page({ params }: Props) {
         <ArrowLeft size={15} />
         Todos os negócios
       </Link>
-      <header className="mb-7 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
+      <header className="mb-7 flex flex-col items-start gap-5 md:flex-row md:items-center md:gap-7">
         <BusinessMedia item={item} eager detail />
-        <div className="min-w-0 [&_h1]:mt-3 [&_h1]:text-4xl [&_h1]:leading-[1.2] sm:[&_h1]:text-[clamp(34px,4.2vw,55px)]">
+        <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-3">
             <p className={`${eyebrow} text-emerald text-xs tracking-[0.16em]`}>
               {item.category}
             </p>
           </div>
-          <h1>{item.name}</h1>
+          <h1 className="mt-3 text-4xl leading-[1.2] md:text-[clamp(34px,4.2vw,55px)]">
+            {item.name}
+          </h1>
           <p className={introCopy}>{item.shortDescription}</p>
         </div>
       </header>
-      <div className="flex flex-col gap-7 md:grid md:grid-cols-[minmax(0,1fr)_340px] md:items-start md:gap-10 md:[&:not(:has(aside_section))]:grid-cols-1">
+      <div className="flex flex-col gap-7 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-10 lg:[&:not(:has(aside_section))]:grid-cols-1">
         <aside
-          className="contents min-w-0 md:col-start-2 md:row-start-1 md:block md:rounded-lg md:border md:border-line md:bg-surface md:p-[26px] [&:not(:has(section))]:hidden"
+          className="contents min-w-0 lg:col-start-2 lg:row-start-1 lg:block lg:rounded-lg lg:border lg:border-line lg:bg-surface lg:p-[26px] [&:not(:has(section))]:hidden"
           aria-label="Contato e atendimento"
         >
           <BusinessContacts item={item} />
           {hasInfo && (
             <section
-              className="order-2 w-full rounded-lg border border-line bg-surface p-5 md:border-0 md:bg-transparent md:p-0"
+              className="order-2 w-full rounded-lg border border-line bg-surface p-5 lg:border-0 lg:bg-transparent lg:p-0"
               aria-labelledby="business-info-title"
             >
               <h2 className="mb-3.5 text-[26px]" id="business-info-title">
@@ -95,11 +97,11 @@ export default async function Page({ params }: Props) {
             </section>
           )}
         </aside>
-        <div className="order-1 min-w-0 w-full md:col-start-1 md:row-start-1">
+        <div className="order-1 min-w-0 w-full lg:col-start-1 lg:row-start-1">
           {item.coverImage && (
             <div
               data-business-photo
-              className="relative aspect-[1.5] max-h-[380px] overflow-hidden rounded-lg bg-[#e2e7db] md:aspect-[1.8]"
+              className="relative aspect-[1.5] max-h-[380px] overflow-hidden rounded-lg bg-[#e2e7db] lg:aspect-[1.8]"
             >
               <Image
                 src={item.coverImage.src}

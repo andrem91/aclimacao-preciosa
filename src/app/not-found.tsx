@@ -7,14 +7,14 @@ import {
 import Link from "next/link";
 export default function NotFound() {
   return (
-    <div
-      className={`${pageContainer} ${emptyState} my-[65px] [&_h1]:mx-auto [&_h1]:my-5 [&_h1]:max-w-[650px] [&_h1]:text-[31px] sm:[&_h1]:text-[40px]`}
-    >
+    <div className={`${pageContainer} ${emptyState} my-[65px]`}>
       <p className={`${eyebrow} text-emerald text-xs tracking-[0.16em]`}>
         404 · Um desvio no caminho
       </p>
-      <h1>Essa descoberta ainda não está aqui.</h1>
-      <p>
+      <h1 className="mx-auto my-5 max-w-[650px] text-[31px] md:text-[40px]">
+        Essa descoberta ainda não está aqui.
+      </h1>
+      <p className="mx-auto my-5 max-w-[60ch]">
         A página não existe ou não está publicada. Que tal explorar o bairro por
         outro caminho?
       </p>

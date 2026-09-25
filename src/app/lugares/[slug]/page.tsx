@@ -78,14 +78,14 @@ export default async function Page({ params, searchParams }: Props) {
         <p className={introCopy}>{x.shortDescription}</p>
       </header>
       <div
-        className={`flex flex-col gap-7 md:grid md:items-start md:gap-9 ${hasInfo ? "md:grid-cols-[minmax(0,1fr)_350px]" : "mx-auto max-w-[800px] md:grid-cols-1"}`}
+        className={`flex flex-col gap-7 lg:grid lg:items-start lg:gap-9 ${hasInfo ? "lg:grid-cols-[minmax(0,1fr)_350px]" : "mx-auto max-w-[800px] lg:grid-cols-1"}`}
       >
         {hasInfo && (
           <aside
-            className="w-full min-w-0 rounded-lg border border-line bg-surface p-[22px] wrap-anywhere md:col-start-2 md:row-start-1 md:p-[26px] [&_h2]:mb-[18px] [&_h2]:text-[27px]"
+            className="w-full min-w-0 rounded-lg border border-line bg-surface p-[22px] wrap-anywhere lg:col-start-2 lg:row-start-1 lg:p-[26px]"
             aria-label="Informações de visitação"
           >
-            <h2>Planeje sua visita</h2>
+            <h2 className="mb-[18px] text-[27px]">Planeje sua visita</h2>
             <dl>
               <Info label="Localização" value={address} />
               <Info label="Horário" value={x.openingHours} />
@@ -113,7 +113,7 @@ export default async function Page({ params, searchParams }: Props) {
             />
           </aside>
         )}
-        <div className="w-full min-w-0 md:col-start-1 md:row-start-1">
+        <div className="w-full min-w-0 lg:col-start-1 lg:row-start-1">
           <div className="relative aspect-[1.6] overflow-hidden rounded-lg">
             <Image
               src={x.coverImage.src}
@@ -131,14 +131,15 @@ export default async function Page({ params, searchParams }: Props) {
           <Gallery item={{ gallery }} />
           {!!moreInformation?.length && (
             <section
-              className="mt-8 border-t border-line pt-5 text-sm [&_h2]:mb-3 [&_h2]:text-base [&_h2]:font-semibold [&_li]:mt-3 [&_li]:grid [&_li]:gap-[5px] [&_a]:text-emerald [&_a]:underline [&_a]:wrap-anywhere"
+              className="mt-8 border-t border-line pt-5 text-sm"
               aria-label="Mais informações"
             >
-              <h2>Mais informações</h2>
+              <h2 className="mb-3 text-base font-semibold">Mais informações</h2>
               <ul>
                 {moreInformation.map((link) => (
-                  <li key={link.url}>
+                  <li className="mt-3 grid gap-1" key={link.url}>
                     <a
+                      className="text-emerald underline wrap-anywhere"
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"

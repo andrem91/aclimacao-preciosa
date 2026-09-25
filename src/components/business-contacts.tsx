@@ -51,7 +51,7 @@ export function BusinessContacts({
 }) {
   const [copyStatus, setCopyStatus] = useState("");
   const contactLink =
-    "inline-flex min-h-11 min-w-0 items-center gap-2.5 text-emerald hover:underline [&_span]:wrap-anywhere";
+    "inline-flex min-h-11 min-w-0 items-center gap-2.5 text-emerald hover:underline";
   const iconLink =
     "inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-line text-emerald hover:bg-[#e5ebe0]";
   const website = webUrl(item.website);
@@ -81,7 +81,7 @@ export function BusinessContacts({
     <section
       className={
         layout === "business"
-          ? "order-0 grid w-full gap-3.5 rounded-lg border border-line bg-surface p-5 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:has-[+section]:mb-6 md:has-[+section]:border-b md:has-[+section]:pb-6"
+          ? "order-0 grid w-full gap-3.5 rounded-lg border border-line bg-surface p-5 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:has-[+section]:mb-6 lg:has-[+section]:border-b lg:has-[+section]:pb-6"
           : "mt-6 grid gap-[18px] border-t border-line pt-[22px]"
       }
       aria-label={label}
@@ -116,7 +116,7 @@ export function BusinessContacts({
             >
               <Phone size={18} aria-hidden="true" />
               {appearance === "buttons" && "Ligar "}
-              <span>{item.phone}</span>
+              <span className="wrap-anywhere">{item.phone}</span>
             </a>
           )}
         </div>
@@ -132,14 +132,16 @@ export function BusinessContacts({
               aria-label={`Visitar site: ${website.hostname}`}
             >
               <Globe size={19} aria-hidden="true" />
-              <span>{website.hostname.replace(/^www\./, "")}</span>
+              <span className="wrap-anywhere">
+                {website.hostname.replace(/^www\./, "")}
+              </span>
             </a>
           )}
           {email && (
             <div className="flex min-w-0 flex-wrap items-center gap-2">
               <a className={contactLink} href={`mailto:${email}`}>
                 <Mail size={19} aria-hidden="true" />
-                <span>{email}</span>
+                <span className="wrap-anywhere">{email}</span>
               </a>
               <button
                 className={iconLink}

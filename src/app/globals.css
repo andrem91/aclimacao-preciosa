@@ -7,14 +7,22 @@
   --color-muted: #62685f;
   --color-line: #deddd3;
   --color-emerald: #0f6b4f;
+  --color-surface-soft: #fffdf8;
+  --color-field: #faf9f4;
+  --color-field-border: #d9dfd2;
+  --color-wash: #e5ebe0;
+  --color-olive: #6b7250;
+  --color-emerald-dark: #08503b;
+  --color-emerald-ink: #164333;
+  --color-focus: #1f3a93;
   --font-sans: "Plus Jakarta Sans Variable", sans-serif;
   --font-serif: "Playfair Display Variable", Georgia, serif;
   --breakpoint-*: initial;
-  --breakpoint-xs: 601px;
-  --breakpoint-sm: 761px;
-  --breakpoint-md: 901px;
-  --breakpoint-lg: 1001px;
-  --breakpoint-2xl: 1500px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
   --text-xs--line-height: 1.7;
   --text-sm--line-height: 1.7;
   --text-base--line-height: 1.7;
@@ -74,7 +82,7 @@
     -webkit-tap-highlight-color: transparent;
   }
   :where(a, button, input, select, textarea, [tabindex]):focus-visible {
-    outline: 3px solid #1f3a93;
+    outline: 3px solid var(--color-focus);
     outline-offset: 5px;
   }
   @media (prefers-reduced-motion: reduce) {

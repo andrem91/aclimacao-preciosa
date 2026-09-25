@@ -11,6 +11,7 @@ function Inline({ text }: { text: string }) {
     if (link && safeWebUrl(link[2]))
       return (
         <a
+          className="text-emerald underline wrap-anywhere"
           key={index}
           href={safeWebUrl(link[2])}
           target="_blank"
@@ -37,7 +38,7 @@ function Inline({ text }: { text: string }) {
 }
 export function FormattedText({ text }: { text: string }) {
   return (
-    <div className="[&_a]:text-emerald [&_a]:underline [&_a]:wrap-anywhere">
+    <div>
       {text
         .replaceAll("\r\n", "\n")
         .split(/\n\s*\n/)

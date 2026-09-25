@@ -75,18 +75,20 @@ export default async function Page({ params, searchParams }: Props) {
         <h1>{item.title}</h1>
         <p className={introCopy}>{item.subtitle}</p>
       </header>
-      <div className="flex flex-col gap-7 md:grid md:grid-cols-[minmax(0,1fr)_350px] md:items-start md:gap-9">
+      <div className="flex flex-col gap-7 lg:grid lg:grid-cols-[minmax(0,1fr)_350px] lg:items-start lg:gap-9">
         <aside
-          className="w-full min-w-0 rounded-lg border border-line bg-surface p-[22px] md:col-start-2 md:row-start-1 md:p-[26px] [&_h2]:mb-[18px] [&_h2]:text-[27px]"
+          className="w-full min-w-0 rounded-lg border border-line bg-surface p-[22px] lg:col-start-2 lg:row-start-1 lg:p-[26px]"
           aria-label="Informações e participação"
         >
-          <h2>{active ? "Programe sua visita" : "Informações do evento"}</h2>
+          <h2 className="mb-[18px] text-[27px]">
+            {active ? "Programe sua visita" : "Informações do evento"}
+          </h2>
           {state !== "upcoming" && (
             <div
-              className={`mb-5 rounded bg-[#f3eee5] p-4 leading-[1.6] [&_p]:mt-1.5 [&_p]:text-sm ${eventStateColor[state]}`}
+              className={`mb-5 rounded bg-[#f3eee5] p-4 leading-[1.6] ${eventStateColor[state]}`}
             >
               <strong>{eventStateLabels[state]}</strong>
-              <p>
+              <p className="mt-1.5 text-sm">
                 {state === "ended"
                   ? "Este evento já terminou."
                   : state === "cancelled"
@@ -97,7 +99,7 @@ export default async function Page({ params, searchParams }: Props) {
               </p>
             </div>
           )}
-          <dl className="grid grid-cols-2 gap-x-5 md:block">
+          <dl className="grid grid-cols-2 gap-x-5 lg:block">
             <div className="col-span-full min-w-0 [&+div]:mt-5">
               <dt className="text-xs font-semibold tracking-[0.08em] text-[#687660] uppercase">
                 {state === "postponed"
@@ -144,14 +146,17 @@ export default async function Page({ params, searchParams }: Props) {
             label="Contato da organização"
           />
         </aside>
-        <div className="w-full min-w-0 md:col-start-1 md:row-start-1">
+        <div className="w-full min-w-0 lg:col-start-1 lg:row-start-1">
           <div
-            className={`relative grid place-items-center overflow-hidden rounded-lg bg-[#e5ebe0] text-emerald ${item.imageFit === "contain" ? "aspect-[0.85] max-h-[650px] [&_img]:object-contain [&_img]:p-3" : "aspect-[1.7] max-h-[400px]"}`}
+            className={`relative grid place-items-center overflow-hidden rounded-lg bg-wash text-emerald ${item.imageFit === "contain" ? "aspect-[0.85] max-h-[650px]" : "aspect-[1.7] max-h-[400px]"}`}
           >
             {item.coverImage ? (
               <Image
                 src={item.coverImage.src}
                 alt={item.coverImage.alt}
+                className={
+                  item.imageFit === "contain" ? "object-contain p-3" : undefined
+                }
                 fill
                 loading="eager"
                 sizes="(max-width: 900px) 92vw, 720px"

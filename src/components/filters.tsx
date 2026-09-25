@@ -15,7 +15,7 @@ function Filters({
 }) {
   return (
     <div
-      className="-mx-[5px] mb-[9px] flex max-w-full gap-[9px] overflow-auto px-[5px] pt-2 pb-[23px] max-sm:-mr-5 max-sm:pr-5"
+      className="-mx-[5px] mb-[9px] flex max-w-full gap-[9px] overflow-auto px-[5px] pt-2 pb-[23px] max-md:-mr-5 max-md:pr-5"
       role="group"
       aria-label="Filtrar conteúdos"
     >
@@ -48,7 +48,7 @@ export function EstablishmentGrid({ items }: { items: Establishment[] }) {
       <div aria-live="polite">
         <h2 className="sr-only">Negócios nesta categoria</h2>
         <div
-          className={`${cardGrid} gap-y-[42px] sm:gap-y-[42px] lg:gap-y-[42px]`}
+          className={`${cardGrid} gap-y-[42px] md:gap-y-[42px] xl:gap-y-[42px]`}
         >
           {filtered.map((item, index) => (
             <EstablishmentCard key={item.id} item={item} eager={index < 3} />

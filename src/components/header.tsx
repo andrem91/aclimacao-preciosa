@@ -29,7 +29,7 @@ export function Header() {
       }}
     >
       <div
-        className={`${pageContainer} flex h-[76px] items-center justify-between gap-[18px] sm:h-[89px] lg:gap-6`}
+        className={`${pageContainer} flex h-[76px] items-center justify-between gap-[18px] md:h-[89px] lg:gap-6`}
       >
         <Link
           href="/"

@@ -44,7 +44,7 @@ export default async function Page({
   const returnTo =
     "/lugares?" + new URLSearchParams({ q, categoria: category });
   return (
-    <div className={`${pageContainer} min-h-[65vh] pb-[55px] sm:pb-[85px]`}>
+    <div className={`${pageContainer} min-h-[65vh] pb-[55px] md:pb-[85px]`}>
       <PageIntro
         eyebrow="Pelo caminho"
         title="Lugares para conhecer"
@@ -53,7 +53,7 @@ export default async function Page({
       <form
         action="/lugares"
         method="get"
-        className="grid grid-cols-1 items-end gap-4 rounded-lg border border-line bg-surface p-[18px] xs:grid-cols-2 xs:p-6 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_auto] max-md:[&_button]:col-span-full"
+        className="grid grid-cols-1 items-end gap-4 rounded-lg border border-line bg-surface p-[18px] sm:grid-cols-2 sm:p-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_auto] max-lg:[&>button]:col-span-full"
         key={returnTo}
       >
         <label className={filterLabel}>
@@ -94,7 +94,7 @@ export default async function Page({
       </div>
       {results.length ? (
         <div
-          className={`${cardGrid} gap-y-[42px] sm:gap-y-[42px] lg:gap-y-[42px]`}
+          className={`${cardGrid} gap-y-[42px] md:gap-y-[42px] xl:gap-y-[42px]`}
         >
           {results.map((item, index) => (
             <PlaceCard

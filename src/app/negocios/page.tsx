@@ -8,7 +8,7 @@ export const metadata = {
 };
 export default function Page() {
   return (
-    <div className={`${pageContainer} min-h-[65vh] pb-[55px] sm:pb-[85px]`}>
+    <div className={`${pageContainer} min-h-[65vh] pb-[55px] md:pb-[85px]`}>
       <PageIntro
         eyebrow="Negócios do bairro"
         title="Negócios da Aclimação"

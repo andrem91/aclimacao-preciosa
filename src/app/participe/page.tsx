@@ -14,7 +14,7 @@ export default async function Page({
   const { tipo } = await searchParams;
   const initial = tipo === "evento" || tipo === "lugar" ? tipo : "negocio";
   return (
-    <div className={`${pageContainer} min-h-[65vh] pb-[55px] sm:pb-[85px]`}>
+    <div className={`${pageContainer} min-h-[65vh] pb-[55px] md:pb-[85px]`}>
       <PageIntro
         eyebrow="O próximo encontro começa com você"
         title="Faça parte do Aclimação Preciosa"
