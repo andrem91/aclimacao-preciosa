@@ -156,7 +156,7 @@ export function ParticipationForm({
             {type === "evento" && (
               <>
                 <div className="grid grid-cols-1 gap-[21px] md:grid-cols-2 md:gap-[18px]">
-                  <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
+                  <label className={formLabel}>
                     Data do evento
                     <input
                       className={formControl}
@@ -165,11 +165,11 @@ export function ParticipationForm({
                       required
                     />
                   </label>
-                  <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
+                  <label className={formLabel}>
                     Horário de início
                     <input
-                      className="min-h-[45px] w-full rounded-[3px] border border-[#d9dfd2] bg-[#faf9f4] p-3 text-base font-normal text-ink placeholder:text-sm placeholder:text-[#7a8078]"
                       name="horario"
+                      className={formControl}
                       type="time"
                     />
                   </label>

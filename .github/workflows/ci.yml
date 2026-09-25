@@ -34,8 +34,20 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Start portal
-        run: npm run dev > portal.log 2>&1 &
+      - name: Start production portal
+        run: |
+          npm run start > portal.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000 > /dev/null; then
+              echo "Portal is ready"
+              exit 0
+            fi
+            sleep 1
+          done
+
+          echo "Portal did not start"
+          cat portal.log
+          exit 1
 
       - name: Check public routes
         run: npm run check:portal
