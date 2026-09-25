@@ -81,6 +81,7 @@ export function Header() {
             <Link
               key={url}
               href={url}
+              className="flex min-h-12 items-center justify-between border-b border-line py-3 text-base font-medium hover:text-emerald aria-[current=page]:text-emerald"
               aria-current={active(url) ? "page" : undefined}
               onClick={() => setOpen(false)}
             >

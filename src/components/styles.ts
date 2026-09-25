@@ -21,8 +21,12 @@ export const prose =
 export const filterLabel = "grid min-w-0 gap-2 text-sm";
 export const filterInput =
   "min-h-12 w-full rounded border border-line bg-white p-2.5 text-base";
+export const formLabel = "flex min-w-0 flex-col gap-2 text-sm font-semibold";
+export const formControl =
+  "min-h-[45px] w-full rounded-[3px] border border-[#d9dfd2] bg-[#faf9f4] p-3 text-base font-normal text-ink placeholder:text-sm placeholder:text-[#7a8078]";
+export const formTextarea = `${formControl} min-h-[110px] resize-y`;
 export const resultSummary =
-  "mt-8 mb-[22px] flex flex-wrap items-baseline gap-x-6 gap-y-3 [&_h2]:text-[28px] [&_span]:text-sm [&_a]:ml-auto [&_a]:text-sm [&_a]:text-emerald [&_a]:underline max-[601px]:[&_a]:ml-0";
+  "mt-8 mb-[22px] flex flex-wrap items-baseline gap-x-6 gap-y-3 [&_h2]:text-[28px] [&_span]:text-sm [&_a]:ml-auto [&_a]:text-sm [&_a]:text-emerald [&_a]:underline max-xs:[&_a]:ml-0";
 
 export function buttonStyles(
   variant: "primary" | "cream" | "outline" = "primary",

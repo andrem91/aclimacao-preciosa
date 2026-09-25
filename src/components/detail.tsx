@@ -16,7 +16,7 @@ export function Gallery({ item }: { item: Pick<BaseContent, "gallery"> }) {
   return (
     <section className="mt-[45px]">
       <h2 className="mb-[22px] text-[30px]">Outros olhares</h2>
-      <div className="grid grid-cols-1 gap-5 min-[601px]:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 xs:grid-cols-2">
         {item.gallery.map((im, i) => (
           <div
             key={i}

@@ -63,7 +63,7 @@ export default async function Page({
       <form
         action="/eventos"
         method="get"
-        className="grid grid-cols-1 items-end gap-4 rounded-lg border border-line bg-surface p-[18px] min-[601px]:grid-cols-2 min-[601px]:p-6 lg:grid-cols-[1.4fr_1fr_1fr_auto]"
+        className="grid grid-cols-1 items-end gap-4 rounded-lg border border-line bg-surface p-[18px] xs:grid-cols-2 xs:p-6 lg:grid-cols-[1.4fr_1fr_1fr_auto]"
         key={returnTo}
       >
         <label className={filterLabel}>

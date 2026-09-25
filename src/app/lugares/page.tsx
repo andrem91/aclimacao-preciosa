@@ -53,7 +53,7 @@ export default async function Page({
       <form
         action="/lugares"
         method="get"
-        className="grid grid-cols-1 items-end gap-4 rounded-lg border border-line bg-surface p-[18px] min-[601px]:grid-cols-2 min-[601px]:p-6 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_auto] max-md:[&_button]:col-span-full"
+        className="grid grid-cols-1 items-end gap-4 rounded-lg border border-line bg-surface p-[18px] xs:grid-cols-2 xs:p-6 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_auto] max-md:[&_button]:col-span-full"
         key={returnTo}
       >
         <label className={filterLabel}>

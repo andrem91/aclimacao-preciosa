@@ -1,5 +1,11 @@
 "use client";
-import { eyebrow, buttonStyles } from "@/components/styles";
+import {
+  eyebrow,
+  buttonStyles,
+  formControl,
+  formLabel,
+  formTextarea,
+} from "@/components/styles";
 
 import { useRef, useState } from "react";
 import {
@@ -95,20 +101,20 @@ export function ParticipationForm({
             }}
           >
             <div className="grid grid-cols-1 gap-[21px] sm:grid-cols-2 sm:gap-[18px]">
-              <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
+              <label className={formLabel}>
                 Seu nome
                 <input
-                  className="min-h-[45px] w-full rounded-[3px] border border-[#d9dfd2] bg-[#faf9f4] p-3 text-base font-normal text-ink placeholder:text-sm placeholder:text-[#7a8078]"
+                  className={formControl}
                   name="responsavel"
                   autoComplete="name"
                   required
                   maxLength={120}
                 />
               </label>
-              <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
+              <label className={formLabel}>
                 E-mail ou WhatsApp
                 <input
-                  className="min-h-[45px] w-full rounded-[3px] border border-[#d9dfd2] bg-[#faf9f4] p-3 text-base font-normal text-ink placeholder:text-sm placeholder:text-[#7a8078]"
+                  className={formControl}
                   name="contato"
                   required
                   maxLength={150}
@@ -116,24 +122,24 @@ export function ParticipationForm({
                 />
               </label>
             </div>
-            <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
+            <label className={formLabel}>
               {type === "negocio"
                 ? "Nome do negócio"
                 : type === "evento"
                   ? "Nome do evento"
                   : "Nome do lugar ou título da história"}
               <input
-                className="min-h-[45px] w-full rounded-[3px] border border-[#d9dfd2] bg-[#faf9f4] p-3 text-base font-normal text-ink placeholder:text-sm placeholder:text-[#7a8078]"
+                className={formControl}
                 name="nome"
                 required
                 maxLength={180}
               />
             </label>
             {type === "negocio" && (
-              <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
+              <label className={formLabel}>
                 Categoria
                 <select
-                  className="min-h-[45px] w-full rounded-[3px] border border-[#d9dfd2] bg-[#faf9f4] p-3 text-base font-normal text-ink placeholder:text-sm placeholder:text-[#7a8078]"
+                  className={formControl}
                   name="categoria"
                   required
                   defaultValue=""
@@ -153,7 +159,7 @@ export function ParticipationForm({
                   <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
                     Data do evento
                     <input
-                      className="min-h-[45px] w-full rounded-[3px] border border-[#d9dfd2] bg-[#faf9f4] p-3 text-base font-normal text-ink placeholder:text-sm placeholder:text-[#7a8078]"
+                      className={formControl}
                       name="data"
                       type="date"
                       required
@@ -168,10 +174,10 @@ export function ParticipationForm({
                     />
                   </label>
                 </div>
-                <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
+                <label className={formLabel}>
                   Local
                   <input
-                    className="min-h-[45px] w-full rounded-[3px] border border-[#d9dfd2] bg-[#faf9f4] p-3 text-base font-normal text-ink placeholder:text-sm placeholder:text-[#7a8078]"
+                    className={formControl}
                     name="local"
                     required
                     maxLength={180}
@@ -179,12 +185,12 @@ export function ParticipationForm({
                 </label>
               </>
             )}
-            <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold">
+            <label className={formLabel}>
               {type === "negocio"
                 ? "Conte um pouco sobre o negócio"
                 : "Descrição"}
               <textarea
-                className="min-h-[110px] resize-y w-full rounded-[3px] border border-[#d9dfd2] bg-[#faf9f4] p-3 text-base font-normal text-ink placeholder:text-sm placeholder:text-[#7a8078]"
+                className={formTextarea}
                 name="mensagem"
                 rows={5}
                 required

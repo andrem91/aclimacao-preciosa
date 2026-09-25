@@ -10,6 +10,7 @@
   --font-sans: "Plus Jakarta Sans Variable", sans-serif;
   --font-serif: "Playfair Display Variable", Georgia, serif;
   --breakpoint-*: initial;
+  --breakpoint-xs: 601px;
   --breakpoint-sm: 761px;
   --breakpoint-md: 901px;
   --breakpoint-lg: 1001px;
