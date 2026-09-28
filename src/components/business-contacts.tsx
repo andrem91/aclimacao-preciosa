@@ -53,7 +53,7 @@ export function BusinessContacts({
   const contactLink =
     "inline-flex min-h-11 min-w-0 items-center gap-2.5 text-emerald hover:underline";
   const iconLink =
-    "inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-line text-emerald hover:bg-[#e5ebe0]";
+    "inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-line text-emerald hover:bg-wash";
   const website = webUrl(item.website);
   const phone = item.phone?.replace(/[^+\d]/g, "");
   const whatsapp = item.whatsapp?.replace(/\D/g, "");

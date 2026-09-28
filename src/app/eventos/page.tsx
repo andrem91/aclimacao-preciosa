@@ -56,7 +56,6 @@ export default async function Page({
     <div className={`${pageContainer} min-h-[65vh] pb-[55px] md:pb-[85px]`}>
       <EventRefresh />
       <PageIntro
-        eyebrow="Encontre seu próximo programa"
         title="Eventos na Aclimação"
         description="Música, cultura, oficinas e encontros para viver o bairro. Escolha seu próximo programa."
       />
@@ -141,7 +140,7 @@ export default async function Page({
           </Link>
         </div>
       )}
-      <div className="mt-[45px] flex flex-wrap justify-between gap-4 rounded-lg bg-[#e5ebe0] p-6">
+      <div className="mt-[45px] flex flex-wrap justify-between gap-4 rounded-lg bg-wash p-6">
         <p>Vai organizar um encontro no bairro?</p>
         <Link href="/participe?tipo=evento" className={textLink}>
           Divulgue seu evento

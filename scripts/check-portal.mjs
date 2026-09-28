@@ -7,6 +7,25 @@ const datasets = {
   places: "lugares",
 };
 const routes = ["/", "/negocios", "/eventos", "/lugares", "/participe"];
+function checkImages(value) {
+  if (!value || typeof value !== "object") return;
+  if (typeof value.src === "string" && value.src.startsWith("/images/"))
+    assert.ok(
+      fs.existsSync(`public${value.src}`),
+      `Missing local image: ${value.src}`,
+    );
+  for (const child of Object.values(value)) checkImages(child);
+}
+for (const file of fs
+  .readdirSync("src/data")
+  .filter((file) => file.endsWith(".json"))) {
+  const raw = fs.readFileSync(`src/data/${file}`, "utf8");
+  assert.ok(
+    !raw.includes("googleusercontent.com"),
+    `${file}: temporary remote image`,
+  );
+  checkImages(JSON.parse(raw));
+}
 for (const [file, route] of Object.entries(datasets)) {
   const records = JSON.parse(fs.readFileSync(`src/data/${file}.json`, "utf8"));
   assert.equal(
@@ -31,6 +50,34 @@ for (const route of routes) {
   assert.ok(html.includes('lang="pt-BR"'), `${route}: missing language`);
   assert.ok(!html.includes('href="#"'), `${route}: placeholder link`);
   assert.ok(!html.includes("\uFFFD"), `${route}: invalid text encoding`);
+  assert.ok(
+    !/Ã[§£³©­]|â€|Â©/.test(html),
+    `${route}: corrupted Portuguese text`,
+  );
+  if (route === "/") {
+    assert.ok(html.includes('id="sobre"'));
+    assert.ok(html.includes("O guia do bairro da Aclimação"));
+    // Seasonal highlight leaves the Home when its last session has ended.
+    if (new Date() < new Date("2026-12-21T01:00:00Z"))
+      assert.ok(html.includes('href="/eventos/natal-aclimacao-preciosa"'));
+  }
+  if (route === "/eventos/natal-aclimacao-preciosa")
+    assert.ok(html.includes("Programação em construção"));
+  if (route === "/participe") {
+    for (const marker of [
+      "<form",
+      'name="consentimento"',
+      "Enviar contribuição",
+      'id="contato"',
+    ])
+      assert.ok(html.includes(marker), `Participation: missing ${marker}`);
+    for (const removed of [
+      "simulação",
+      "Testar formulário",
+      "O envio ainda não está disponível",
+    ])
+      assert.ok(!html.includes(removed), `Participation: obsolete ${removed}`);
+  }
   if (route === "/negocios") {
     assert.ok(
       !html.includes("data-business-photo"),
@@ -192,6 +239,11 @@ console.log(
 assert.ok(
   contribution.includes("Data do evento") &&
     !contribution.includes("Nome do evento ou experiência"),
+);
+assert.match(contribution, /name="tipo"[^>]*value="evento"/);
+assert.match(
+  contribution,
+  /aria-current="page"[^>]*href="\/participe\?tipo=evento#contato"/,
 );
 
 assert.ok(

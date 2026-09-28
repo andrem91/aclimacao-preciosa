@@ -8,7 +8,7 @@
     "category": "Música",
     "locationName": "Parque da Aclimação",
     "coverImage": {
-      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDj-hwcJaCFUlCnmd-R697MnY-aA_5hUnAzgz66NdVJFiyLSODGRUNftUfzANINky3wDnxYz8YCEzdZWGovXJsA_VaigkEqJNcoyi-YyMDfyBxrmvfg-NNAbgREaociqGVdHLEoyn0SO5omYDV1KA6LMyMp5izo73LIyyJj-8nrOZmOP6FmI3oVjWEkOZZBs4UV4sbFlP4IKDcVGaFFJ_PnQE1VHCBAyBb34ygVNsLGe3RVHj91uRIs",
+      "src": "/images/eventos/piquenique-musical-no-parque.jpg",
       "alt": "Imagem de Piquenique musical no parque"
     },
     "eventStatus": "scheduled",
@@ -17,7 +17,7 @@
     "website": "https://example.com",
     "gallery": [
       {
-        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGNEsJJOh9sjUVtg8eJE7QUzhgPjlDYnobqx0KCDLoEIs5a0NHKtGNTOIKCfXBSrervYuNogKgopxkFeyHghPUAdIwmhsrRPKEs8duA9djLi2eEs_mXkuXh62fNZY0Iq_r6jC2QPj5xojwz0bYCRQqGcrRzsiVnDQio2DtBdy7_41H5_QnRdu8chRrjrVtWqLZdpfo-_BFWHl1C0yiytXtvRwdf3cRgTC_T7pYxUd3U9nNq9nt9z9n",
+        "src": "/images/eventos/caminhada-pelos-casaroes.jpg",
         "alt": "Imagem de Caminhada pelos casarões"
       }
     ],
@@ -41,7 +41,7 @@
     "category": "Cultura",
     "locationName": "Ponto de encontro a confirmar",
     "coverImage": {
-      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGNEsJJOh9sjUVtg8eJE7QUzhgPjlDYnobqx0KCDLoEIs5a0NHKtGNTOIKCfXBSrervYuNogKgopxkFeyHghPUAdIwmhsrRPKEs8duA9djLi2eEs_mXkuXh62fNZY0Iq_r6jC2QPj5xojwz0bYCRQqGcrRzsiVnDQio2DtBdy7_41H5_QnRdu8chRrjrVtWqLZdpfo-_BFWHl1C0yiytXtvRwdf3cRgTC_T7pYxUd3U9nNq9nt9z9n",
+      "src": "/images/eventos/caminhada-pelos-casaroes.jpg",
       "alt": "Imagem de Caminhada pelos casarões"
     },
     "eventStatus": "scheduled",
@@ -66,7 +66,7 @@
     "category": "Oficinas",
     "locationName": "Ateliê Mariana Prado",
     "coverImage": {
-      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCHvmzQQKWIOwXrpXIYwDfl6GxrcyGMAECBUDscoL7TM0u8mW7syGBfJUzdo_Ui7IW2RoOAF3vGRh68uTibfW98muanLDCsVWLLXigUQt2ZWHnwmx4fSKjbO7sn_zdnjiYyYbxzIoIC4svRAzm9a4A3o1P0ftAq24Ncwub38P4UDgUFe-5wd7ysKMYEsGS5GM2iS9qn1iZ6s5A2nfi48C20XfmgMQkGR7-zcTvet6CPtv3tzM_Kvy1q",
+      "src": "/images/eventos/oficina-de-ceramica.jpg",
       "alt": "Imagem de Oficina de cerâmica"
     },
     "eventStatus": "scheduled",
@@ -125,7 +125,7 @@
     "category": "Gastronomia",
     "locationName": "Café & Livraria da Praça",
     "coverImage": {
-      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCem_DybhUOnCj_fpivwl6bmUHuR454RjWWdYfZ1mefdlH_l8noi67QEowGJEwEHCn9CnXOslDcWI2en9n2K89Ng81lBZKWf2w07-vrX8LuFIsY23_fXyXkFOhFV4TcBDmBdvn0qmy84x1z6EfotpIM2fUecJ716Xz6anMeDgIlzj9Gz95O7U_zrKY6LmHfcKVwnFRYWWq1UcBBJBDK4aVlgjG3vXm07ZmkUyvtxAFMcnPEOyieNS6I",
+      "src": "/images/eventos/degustacao-de-cafes-especiais.jpg",
       "alt": "Imagem de Degustação de cafés especiais"
     },
     "eventStatus": "scheduled",
@@ -175,7 +175,7 @@
     "locationName": "Espaço cultural do bairro",
     "eventStatus": "scheduled",
     "coverImage": {
-      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGNEsJJOh9sjUVtg8eJE7QUzhgPjlDYnobqx0KCDLoEIs5a0NHKtGNTOIKCfXBSrervYuNogKgopxkFeyHghPUAdIwmhsrRPKEs8duA9djLi2eEs_mXkuXh62fNZY0Iq_r6jC2QPj5xojwz0bYCRQqGcrRzsiVnDQio2DtBdy7_41H5_QnRdu8chRrjrVtWqLZdpfo-_BFWHl1C0yiytXtvRwdf3cRgTC_T7pYxUd3U9nNq9nt9z9n",
+      "src": "/images/eventos/caminhada-pelos-casaroes.jpg",
       "alt": "Imagem de Caminhada pelos casarões"
     },
     "organizer": "Coletivo Cultura no Bairro",
@@ -200,7 +200,7 @@
     "locationName": "Espaço cultural do bairro",
     "eventStatus": "cancelled",
     "coverImage": {
-      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGNEsJJOh9sjUVtg8eJE7QUzhgPjlDYnobqx0KCDLoEIs5a0NHKtGNTOIKCfXBSrervYuNogKgopxkFeyHghPUAdIwmhsrRPKEs8duA9djLi2eEs_mXkuXh62fNZY0Iq_r6jC2QPj5xojwz0bYCRQqGcrRzsiVnDQio2DtBdy7_41H5_QnRdu8chRrjrVtWqLZdpfo-_BFWHl1C0yiytXtvRwdf3cRgTC_T7pYxUd3U9nNq9nt9z9n",
+      "src": "/images/eventos/caminhada-pelos-casaroes.jpg",
       "alt": "Imagem de Caminhada pelos casarões"
     },
     "organizer": "Coletivo Cultura no Bairro",
@@ -265,5 +265,70 @@
       }
     ],
     "admission": "free"
+  },
+  {
+    "id": "natal-aclimacao-preciosa-2026",
+    "slug": "natal-aclimacao-preciosa",
+    "status": "published",
+    "featured": true,
+    "eventStatus": "scheduled",
+    "title": "Natal Aclimação Preciosa",
+    "subtitle": "O bairro em clima de Natal, com decoração, música e programação nos comércios.",
+    "category": "Natal",
+    "sessions": [
+      {
+        "date": "2026-12-12",
+        "startTime": "17:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-13",
+        "startTime": "17:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-14",
+        "startTime": "17:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-15",
+        "startTime": "17:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-16",
+        "startTime": "17:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-17",
+        "startTime": "17:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-18",
+        "startTime": "17:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-19",
+        "startTime": "17:00",
+        "endTime": "22:00"
+      },
+      {
+        "date": "2026-12-20",
+        "startTime": "17:00",
+        "endTime": "22:00"
+      }
+    ],
+    "locationName": "Ruas do bairro da Aclimação",
+    "organizer": "Aclimação Preciosa",
+    "admission": "free",
+    "coverImage": {
+      "src": "/images/eventos/natal-aclimacao-preciosa.svg",
+      "alt": "Ilustração de uma rua do bairro decorada para o Natal"
+    },
+    "body": "O Natal Aclimação Preciosa vai levar o clima de fim de ano para as ruas do bairro, com decoração, música e programação especial nos comércios participantes.\n\n### O que está sendo preparado\n\n- Decoração de Natal em pontos do bairro\n- Parada com Papai Noel e banda\n- Promoções e experiências nos comércios participantes\n- Atividades para crianças e famílias\n\n**Programação em construção:** datas, horários, locais e atrações ainda podem mudar. Acompanhe esta página para as novidades.\n\n### Quer fazer parte?\n\nComerciantes e moradores podem participar da programação."
   }
 ]

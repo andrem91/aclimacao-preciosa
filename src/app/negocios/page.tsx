@@ -10,7 +10,6 @@ export default function Page() {
   return (
     <div className={`${pageContainer} min-h-[65vh] pb-[55px] md:pb-[85px]`}>
       <PageIntro
-        eyebrow="Negócios do bairro"
         title="Negócios da Aclimação"
         description="Da primeira xícara de café aos serviços do dia a dia. Descubra negócios e pessoas por perto."
       />

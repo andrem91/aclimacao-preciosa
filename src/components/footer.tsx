@@ -34,7 +34,7 @@ export function Footer() {
             <Link className="hover:underline" href="/participe">
               Participe
             </Link>
-            <Link className="hover:underline" href="/participe#sobre">
+            <Link className="hover:underline" href="/#sobre">
               Sobre o projeto
             </Link>
             <Link className="hover:underline" href="/participe#contato">
@@ -42,7 +42,7 @@ export function Footer() {
             </Link>
           </nav>
         </div>
-        <div className="flex flex-wrap justify-between gap-x-3.5 gap-y-1.5 border-t border-line py-[21px] text-xs text-[#687064] md:flex-nowrap md:gap-3.5">
+        <div className="flex flex-wrap justify-between gap-x-3.5 gap-y-1.5 border-t border-line py-[21px] text-xs text-muted md:flex-nowrap md:gap-3.5">
           <span>© {new Date().getFullYear()} Aclimação Preciosa</span>
           <span className="w-full md:w-auto">Aclimação · São Paulo</span>
         </div>

@@ -1,5 +1,7 @@
 # Aclimação Preciosa — Especificação do Site MVP v0.1
 
+> **Referência histórica, parcialmente superada.** Para desenvolvimento atual, leia [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) e [AGENTS.md](AGENTS.md). Decisões sobre experiências, negócios, contatos, estilos e dados evoluíram; as orientações abaixo não substituem as decisões atuais.
+
 **Documento de referência para implementação com Codex**  
 **Projeto:** Aclimação Preciosa  
 **Versão alvo:** MVP v0.1  
@@ -11,7 +13,7 @@
 
 Este documento define como o site **Aclimação Preciosa** deve ficar e como a primeira versão deve ser implementada.
 
-Ele deve ser tratado como a principal referência funcional, visual e técnica da v0.1.
+Ele foi a principal referência funcional, visual e técnica da proposta inicial v0.1. O contexto vigente está em `PROJECT_CONTEXT.md`.
 
 Existem layouts HTML gerados pelo Google Stitch que devem ser usados como referência visual. Porém, eles **não devem ser copiados cegamente**.
 

@@ -31,6 +31,9 @@ jobs:
       - name: Domain tests
         run: npm run test:events
 
+      - name: Participation tests
+        run: npm run test:participation
+
       - name: Build
         run: npm run build
 

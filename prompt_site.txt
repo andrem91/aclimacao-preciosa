@@ -1,5 +1,7 @@
 # Projeto: Aclimação Preciosa
 
+NOTA: Este é o prompt histórico da implementação inicial. Para continuar o projeto, leia PROJECT_CONTEXT.md e AGENTS.md. As decisões atuais substituem requisitos antigos deste arquivo, e os layouts Stitch não fazem parte do repositório atual.
+
 Quero que você desenvolva a primeira versão funcional do site **Aclimação Preciosa**, utilizando como referência visual os arquivos HTML/CSS exportados pelo Google Stitch que estão disponíveis neste projeto.
 
 Antes de escrever código, analise todos os layouts fornecidos pelo Stitch e entenda o sistema visual existente.
