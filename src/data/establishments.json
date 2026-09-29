@@ -28,7 +28,15 @@
         "platform": "instagram",
         "url": "https://www.instagram.com/onoderaaclimacao/"
       }
-    ]
+    ],
+    "logo": {
+      "src": "https://www.onodera.com.br/skin/frontend/yepcomm/v3/images/logo-onodera.webp",
+      "alt": "Logomarca da Onodera Estética"
+    },
+    "coverImage": {
+      "src": "https://www.onodera.com.br/media/responsivebannerslider/resized/642x383/_1751549236.webp",
+      "alt": "Imagem institucional da Onodera Estética"
+    }
   },
   {
     "id": "outlet-liberdade-aclimacao",
@@ -48,9 +56,9 @@
       "neighborhood": "Aclimação",
       "city": "São Paulo",
       "state": "SP",
-      "postalCode": "01531-001"
-    },
-    "openingHours": "Segunda a sábado, das 9h às 19h; domingo, das 10h às 17h."
+      "postalCode": "01531-001",
+      "complement": "Loja 004 - Container"
+    }
   },
   {
     "id": "vila-secreta",
@@ -80,7 +88,15 @@
         "platform": "instagram",
         "url": "https://www.instagram.com/vilasecretasp/"
       }
-    ]
+    ],
+    "logo": {
+      "src": "https://colegiopaulodetarso.com.br/wp-content/uploads/2026/08/vila-secreta.jpeg",
+      "alt": "Identidade visual da Vila Secreta"
+    },
+    "coverImage": {
+      "src": "https://images.sympla.com.br/694aeb886f626.jpg",
+      "alt": "Imagem de divulgação da Vila Secreta"
+    }
   },
   {
     "id": "epimed",
@@ -130,7 +146,15 @@
     },
     "phone": "(11) 95257-4020",
     "whatsapp": "(11) 95257-4020",
-    "website": "https://curapro.com.br/"
+    "website": "https://curapro.com.br/",
+    "logo": {
+      "src": "https://i0.wp.com/curapro.com.br/wp-content/uploads/2026/05/logo-curapro-01.png?ssl=1&w=1199",
+      "alt": "Logomarca do Instituto CuraPro"
+    },
+    "coverImage": {
+      "src": "https://i0.wp.com/curapro.com.br/wp-content/uploads/2025/06/DJI_20250329081153_0035_D-scaled-scaled.webp?ssl=1&w=1199",
+      "alt": "Imagem institucional do Instituto CuraPro"
+    }
   },
   {
     "id": "luiv-ia",
