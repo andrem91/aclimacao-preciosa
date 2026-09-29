@@ -158,7 +158,7 @@ O CI configura Node 22, executa `npm ci`, lint, typecheck, testes, build, `npm r
 - Conteúdo e imagens atuais incluem exemplos fictícios e referências externas. Não atribuir dados fictícios aos negócios reais mencionados pelo usuário.
 - As pastas `stitch_aclima_o_preciosa_portal_design/` e `stitch_guia_aclima_o_preciosa/` foram retiradas do Git e ignoradas. Podem existir nesta máquina, mas não são dependências de um clone novo.
 - `scripts/seed.mjs` é legado: lê layouts Stitch e escreve datasets. Não usá-lo para iniciar o projeto nem regenerar dados atuais sem revisão/migração explícita.
-- As 15 referências temporárias foram migradas para 12 imagens únicas em `public/images/{negocios,eventos,lugares}`. Capas repetidas e galerias compartilham arquivos. O Natal usa SVG local. `check:portal` rejeita links Google temporários e caminhos locais sem arquivo. `remotePatterns` foi removido.
+- As 15 referências temporárias foram migradas para 12 imagens únicas em `public/images/{negocios,eventos,lugares}`. Capas repetidas e galerias compartilham arquivos. O Natal usa a arte PNG enviada pelo usuário em 29/09/2026, substituindo o SVG inicial. `check:portal` rejeita links Google temporários e caminhos locais sem arquivo. `remotePatterns` foi removido.
 - `.env*` é ignorado, exceto `.env.example`. O MVP local não exige credenciais de Supabase; não registrar segredos na documentação ou no Git.
 - O repositório é público e está ligado à Vercel: push na `main` publica; PR gera prévia. `private: true` no npm só impede publicação do pacote. Manter segredos fora do Git.
 
