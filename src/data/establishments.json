@@ -1,163 +1,150 @@
 [
   {
-    "id": "cafe-livraria-da-praca",
-    "slug": "cafe-livraria-da-praca",
+    "id": "onodera-aclimacao",
+    "slug": "onodera-aclimacao",
     "status": "published",
     "featured": true,
-    "name": "Café & Livraria da Praça",
-    "category": "Comer & Beber",
-    "shortDescription": "Cafés especiais, boas leituras e uma pausa de frente para a praça.",
-    "description": "Um espaço para desacelerar, escolher a próxima leitura e apreciar cafés preparados na hora. O cardápio reúne bebidas quentes, bolos e pequenos lanches para acompanhar a visita.\n\nAs mesas acolhem encontros e momentos de leitura, enquanto as estantes convidam a descobrir novos autores.",
-    "coverImage": {
-      "src": "/images/negocios/cafe-livraria-da-praca.jpg",
-      "alt": "Imagem de Café & Livraria da Praça"
-    },
-    "serviceModes": ["Em espaço próprio"],
-    "logo": {
-      "src": "/images/cafe-livraria-da-praca.svg",
-      "alt": "Logomarca do Café & Livraria da Praça"
-    },
-    "website": "https://example.com",
-    "email": "contato@example.com",
-    "socialLinks": [
-      {
-        "platform": "instagram",
-        "url": "https://example.com/instagram"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://example.com/youtube"
-      },
-      {
-        "platform": "linkedin",
-        "url": "https://example.com/linkedin"
-      },
-      {
-        "platform": "facebook",
-        "url": "https://example.com/facebook"
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://example.com/tiktok"
-      }
-    ],
-    "address": {
-      "street": "Rua Jardim das Letras",
-      "number": "128",
-      "neighborhood": "Aclimação",
-      "city": "São Paulo",
-      "state": "SP",
-      "complement": "Loja 1"
-    },
-    "openingHours": "Segunda a sábado, das 8h às 19h"
-  },
-  {
-    "id": "atelie-mariana-prado",
-    "slug": "atelie-mariana-prado",
-    "status": "published",
-    "featured": true,
-    "name": "Ateliê Mariana Prado",
-    "category": "Arte & Cultura",
-    "shortDescription": "Cerâmica feita à mão e espaço para descobrir um novo ofício.",
-    "description": "Peças de cerâmica produzidas em pequenos lotes, com atenção às formas, às texturas e aos detalhes do acabamento. O ateliê recebe encomendas e oferece encontros para quem quer experimentar o trabalho com argila.\n\nAs visitas e oficinas acontecem com agendamento prévio.",
-    "serviceModes": ["Em espaço próprio"],
-    "logo": {
-      "src": "/images/atelie-mariana-prado.svg",
-      "alt": "Logomarca do Ateliê Mariana Prado"
-    },
-    "socialLinks": [
-      {
-        "platform": "instagram",
-        "url": "https://example.com/instagram"
-      }
-    ],
-    "address": {
-      "street": "Rua das Oliveiras do Bairro",
-      "number": "45",
-      "neighborhood": "Aclimação",
-      "city": "São Paulo",
-      "state": "SP",
-      "complement": "Sala 2"
-    },
-    "openingHours": "Visitas com agendamento"
-  },
-  {
-    "id": "eletricista-do-bairro",
-    "slug": "eletricista-do-bairro",
-    "status": "published",
-    "featured": true,
-    "name": "Eletricista do Bairro",
-    "category": "Serviços",
-    "shortDescription": "Instalações e pequenos reparos elétricos na sua casa ou no seu negócio.",
-    "description": "Instalação de luminárias, troca de tomadas e manutenção elétrica para residências e pequenos comércios. O atendimento acontece no imóvel do cliente, na Aclimação e nos arredores.\n\nO serviço é combinado previamente, conforme a necessidade e a disponibilidade de horário.",
-    "serviceModes": ["No local do cliente"],
-    "serviceArea": "Aclimação e arredores"
-  },
-  {
-    "id": "moinho-da-colina",
-    "slug": "moinho-da-colina",
-    "status": "published",
-    "featured": false,
-    "name": "Moinho da Colina",
-    "category": "Comer & Beber",
-    "shortDescription": "Pães de fermentação natural e o cheiro de uma nova fornada.",
-    "description": "Pães de fermentação natural preparados em pequenas fornadas, com opções para o café da manhã e a mesa do dia a dia. A seleção inclui pães de casca crocante e acompanhamentos para levar para casa.",
-    "coverImage": {
-      "src": "/images/negocios/moinho-da-colina.jpg",
-      "alt": "Imagem de Moinho da Colina"
-    },
-    "serviceModes": ["Em espaço próprio"],
-    "address": {
-      "street": "Travessa do Trigo",
-      "number": "72",
-      "neighborhood": "Aclimação",
-      "city": "São Paulo",
-      "state": "SP"
-    }
-  },
-  {
-    "id": "quintal-das-suculentas",
-    "slug": "quintal-das-suculentas",
-    "status": "published",
-    "featured": false,
-    "name": "Quintal das Suculentas",
-    "category": "Compras",
-    "shortDescription": "Plantas, vasos e pequenos jardins para levar para casa.",
-    "description": "Plantas, vasos e pequenos jardins para levar para casa.",
-    "coverImage": {
-      "src": "/images/negocios/quintal-das-suculentas.jpg",
-      "alt": "Imagem de Quintal das Suculentas"
-    },
-    "serviceModes": ["Em espaço próprio"]
-  },
-  {
-    "id": "espaco-yoga-aclimacao",
-    "slug": "espaco-yoga-aclimacao",
-    "status": "published",
-    "featured": false,
-    "name": "Espaço Yoga Aclimação",
+    "name": "Onodera Estética Aclimação",
     "category": "Saúde & Bem-estar",
-    "shortDescription": "Movimento, respiração e um momento de cuidado no dia.",
-    "description": "Movimento, respiração e um momento de cuidado no dia.",
-    "coverImage": {
-      "src": "/images/negocios/espaco-yoga-aclimacao.jpg",
-      "alt": "Imagem de Espaço Yoga Aclimação"
+    "shortDescription": "Tratamentos faciais, corporais, manuais e depilação com atendimento na unidade Aclimação.",
+    "description": "A Onodera Aclimação integra a rede Onodera e reúne tratamentos estéticos faciais, corporais, manuais e depilação em uma unidade localizada na Avenida da Aclimação.\n\nA rede atua desde 1981 e trabalha com protocolos personalizados para diferentes objetivos de estética e bem-estar. A unidade Aclimação informa contar com dezenas de opções de tratamento e atendimento com avaliação.",
+    "serviceModes": [
+      "Em espaço próprio"
+    ],
+    "address": {
+      "street": "Av. da Aclimação",
+      "number": "750",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP",
+      "postalCode": "01531-001"
     },
-    "serviceModes": ["Em espaço próprio"]
+    "openingHours": "Segunda a sexta, das 7h às 21h; sábado, das 8h às 17h.",
+    "phone": "(11) 3277-8933",
+    "whatsapp": "(11) 97612-0557",
+    "website": "https://onoderaaclimacao.com.br/",
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/onoderaaclimacao/"
+      }
+    ]
   },
   {
-    "id": "oficina-mecanica-do-bairro",
-    "slug": "oficina-mecanica-do-bairro",
+    "id": "outlet-liberdade-aclimacao",
+    "slug": "outlet-liberdade-aclimacao",
+    "status": "published",
+    "featured": true,
+    "name": "Outlet Liberdade Unidade Aclimação",
+    "category": "Compras",
+    "shortDescription": "Moda e oportunidades de compra em uma unidade de outlet na Aclimação.",
+    "description": "A Outlet Liberdade Unidade Aclimação faz parte do comércio local com uma operação de varejo voltada a roupas e acessórios.\n\nA unidade está instalada na Avenida da Aclimação e amplia as opções de compras de proximidade para moradores e visitantes do bairro.",
+    "serviceModes": [
+      "Em espaço próprio"
+    ],
+    "address": {
+      "street": "Av. da Aclimação",
+      "number": "635",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP",
+      "postalCode": "01531-001"
+    },
+    "openingHours": "Segunda a sábado, das 9h às 19h; domingo, das 10h às 17h."
+  },
+  {
+    "id": "vila-secreta",
+    "slug": "vila-secreta",
+    "status": "published",
+    "featured": true,
+    "name": "Vila Secreta",
+    "category": "Arte & Cultura",
+    "shortDescription": "Uma vila de experiências onde história, cultura e arte se encontram no coração da Aclimação.",
+    "description": "A Vila Secreta é um espaço de experiências históricas e culturais na Aclimação. O local preserva ambientes, objetos e referências de outra época e recebe visitas guiadas, vivências, apresentações, exposições e outras atividades culturais.\n\nA história do espaço está ligada ao colecionador Raful de Raful e hoje é apresentada ao público por seu neto, Victor Raful. As visitas regulares acontecem mediante agendamento. O ingresso informado pelo espaço é de R$ 35, com gratuidade para crianças de até 10 anos.",
+    "serviceModes": [
+      "Em espaço próprio"
+    ],
+    "address": {
+      "street": "Rua Rubi",
+      "number": "50",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP",
+      "postalCode": "01530-080"
+    },
+    "openingHours": "Sextas às 15h; sábados às 10h; visitas com agendamento.",
+    "email": "vilasecreta@vilasecreta.com.br",
+    "website": "https://vilasecreta.com.br/",
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/vilasecretasp/"
+      }
+    ]
+  },
+  {
+    "id": "epimed",
+    "slug": "epimed",
     "status": "published",
     "featured": false,
-    "name": "Oficina Mecânica do Bairro",
-    "category": "Serviços",
-    "shortDescription": "Um exemplo de serviço de proximidade para o cotidiano do bairro.",
-    "description": "Um exemplo de serviço de proximidade para o cotidiano do bairro.",
-    "coverImage": {
-      "src": "/images/negocios/oficina-mecanica-do-bairro.jpg",
-      "alt": "Imagem de Oficina Mecânica do Bairro"
+    "name": "EPIMED",
+    "category": "Saúde & Bem-estar",
+    "shortDescription": "Clínica de emagrecimento e longevidade na Avenida da Aclimação.",
+    "description": "A EPIMED — Epimed Emagrecimento e Longevidade — atua na área de saúde com endereço na Avenida da Aclimação.\n\nAs atividades registradas da empresa incluem atendimento médico ambulatorial, consultas, exames complementares e atuação de profissionais da nutrição. Para informações sobre serviços, disponibilidade e protocolos, o contato direto com a clínica é o canal indicado.",
+    "serviceModes": [
+      "Em espaço próprio"
+    ],
+    "address": {
+      "street": "Av. da Aclimação",
+      "number": "848",
+      "neighborhood": "Aclimação",
+      "city": "São Paulo",
+      "state": "SP",
+      "postalCode": "01531-000"
     },
-    "serviceModes": ["Em espaço próprio"]
+    "phone": "(11) 4356-6875",
+    "whatsapp": "(11) 4356-6875"
+  },
+  {
+    "id": "instituto-curapro",
+    "slug": "instituto-curapro",
+    "status": "published",
+    "featured": false,
+    "name": "Instituto CuraPro",
+    "category": "Saúde & Bem-estar",
+    "shortDescription": "Acolhimento, informação e orientação para pacientes e famílias em jornadas com cannabis medicinal.",
+    "description": "O Instituto CuraPro atua no acolhimento e na orientação de pacientes e familiares que buscam informações sobre cannabis medicinal.\n\nO instituto apresenta uma abordagem baseada em cuidado humanizado, informação e orientação profissional, acompanhando diferentes etapas da jornada de atendimento. Também mantém iniciativas de educação, relacionamento com profissionais da saúde e suporte aos associados.",
+    "serviceModes": [
+      "Em espaço próprio",
+      "Online"
+    ],
+    "serviceArea": "São Paulo e atendimento remoto",
+    "address": {
+      "street": "Av. Senador Casemiro da Rocha",
+      "number": "182",
+      "complement": "1º andar",
+      "neighborhood": "Mirandópolis",
+      "city": "São Paulo",
+      "state": "SP",
+      "postalCode": "04047-000"
+    },
+    "phone": "(11) 95257-4020",
+    "whatsapp": "(11) 95257-4020",
+    "website": "https://curapro.com.br/"
+  },
+  {
+    "id": "luiv-ia",
+    "slug": "luiv-ia",
+    "status": "published",
+    "featured": false,
+    "name": "Luiv.IA",
+    "category": "Serviços",
+    "shortDescription": "Automação inteligente e soluções de IA para modernizar atendimento e processos de negócios.",
+    "description": "A Luiv.IA desenvolve soluções de automação inteligente para negócios locais e digitais. A proposta é simplificar processos, melhorar o atendimento e apoiar empresas na modernização de suas operações.\n\nEntre as frentes apresentadas pela empresa estão automação de pré-atendimento, integrações entre setores, agentes de inteligência artificial e fluxos personalizados para diferentes necessidades comerciais.",
+    "serviceModes": [
+      "Online"
+    ],
+    "serviceArea": "Atendimento remoto para negócios locais e digitais",
+    "website": "https://luivia.com.br/"
   }
 ]
