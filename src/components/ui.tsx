@@ -1,5 +1,6 @@
 import {
   categoryTag,
+  eyebrow as eyebrowStyles,
   eventStateColor,
   textLink,
   introCopy,
@@ -17,13 +18,14 @@ import {
   eventState,
   eventStateLabels,
 } from "@/lib/events";
-import { Placa } from "./placa";
 import { BusinessMedia } from "./business-media";
 export function SectionHeader({
+  eyebrow,
   title,
   href,
   link,
 }: {
+  eyebrow?: string;
   title: string;
   href?: string;
   link?: string;
@@ -31,6 +33,13 @@ export function SectionHeader({
   return (
     <div className="mb-[26px] block md:mb-8 md:flex md:flex-wrap md:items-start md:justify-between md:gap-6 xl:items-end">
       <div>
+        {eyebrow && (
+          <p
+            className={`${eyebrowStyles} mb-[9px] text-emerald text-xs tracking-[0.16em]`}
+          >
+            {eyebrow}
+          </p>
+        )}
         <h2 className="max-w-[18ch] text-[29px] md:max-w-none xl:text-[32px]">
           {title}
         </h2>
@@ -45,14 +54,23 @@ export function SectionHeader({
   );
 }
 export function PageIntro({
+  eyebrow,
   title,
   description,
 }: {
+  eyebrow?: string;
   title: string;
   description: string;
 }) {
   return (
     <div className="max-w-[810px] pt-[38px] pb-[25px] md:pt-[60px] md:pb-[35px]">
+      {eyebrow && (
+        <p
+          className={`${eyebrowStyles} mb-[17px] text-emerald text-xs tracking-[0.16em]`}
+        >
+          {eyebrow}
+        </p>
+      )}
       <h1 className="text-[clamp(38px,4vw,54px)]">{title}</h1>
       <p className={introCopy}>{description}</p>
     </div>
@@ -96,11 +114,6 @@ function Card({
         <p className="mt-2.5 max-w-none text-base leading-[1.8] text-muted md:max-w-[36ch]">
           {item.shortDescription}
         </p>
-        {item.address && (
-          <div className="mt-4">
-            <Placa size="small">{item.address.street}</Placa>
-          </div>
-        )}
         {practical && (
           <p className="mt-[18px] border-t border-line pt-3.5 text-sm font-semibold text-emerald">
             {practical}
@@ -133,15 +146,6 @@ export function EstablishmentCard({
         <p className="mt-2.5 flex-1 text-base leading-[1.8] text-muted md:max-w-[36ch]">
           {item.shortDescription}
         </p>
-        {item.address && (
-          <div className="mt-4">
-            <Placa size="small">
-              {[item.address.street, item.address.number]
-                .filter(Boolean)
-                .join(", ")}
-            </Placa>
-          </div>
-        )}
       </div>
     </Link>
   );
@@ -151,10 +155,8 @@ export function EventCard({
   eager,
   now,
   returnTo,
-  featured = false,
 }: {
   item: Event;
-  featured?: boolean;
   eager?: boolean;
   now: string;
   returnTo?: string;
@@ -164,10 +166,10 @@ export function EventCard({
   return (
     <Link
       href={href}
-      className={`group flex min-w-0 flex-col overflow-hidden rounded-lg border border-line bg-surface ${featured ? "md:col-span-full md:grid md:grid-cols-2" : ""}`}
+      className="group flex min-w-0 flex-col overflow-hidden rounded-lg border border-line bg-surface"
     >
       <div
-        className={`relative grid place-items-center overflow-hidden bg-wash text-emerald ${item.imageFit === "contain" ? "aspect-square" : "aspect-[1.45] md:aspect-[1.43]"} ${featured ? "md:aspect-auto md:min-h-80" : ""}`}
+        className={`relative grid place-items-center overflow-hidden bg-wash text-emerald ${item.imageFit === "contain" ? "aspect-square" : "aspect-[1.45] md:aspect-[1.43]"}`}
       >
         {item.coverImage ? (
           <Image
@@ -254,8 +256,15 @@ export function JoinSection() {
         className={`${pageContainer} block md:flex md:items-center md:justify-between md:gap-8`}
       >
         <div>
-          <h2 className="max-w-[22ch] text-4xl leading-tight">
-            Faça parte do Aclimação Preciosa
+          <p
+            className={`${eyebrowStyles} mb-3.5 text-wash text-xs tracking-[0.16em]`}
+          >
+            O bairro é feito por você
+          </p>
+          <h2 className="text-[35px] leading-[1.22] md:text-[39px]">
+            Faça parte do
+            <br />
+            <em>Aclimação Preciosa.</em>
           </h2>
           <p className="mt-[19px] max-w-[47ch] text-base text-wash">
             Tem um negócio, evento ou conhece um lugar especial no bairro? Conte

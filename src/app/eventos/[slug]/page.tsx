@@ -4,7 +4,6 @@ import {
   backLink,
   detailHeading,
   categoryTag,
-  facetedSmall,
   introCopy,
   prose,
   relatedSection,
@@ -147,7 +146,7 @@ export default async function Page({ params, searchParams }: Props) {
         </aside>
         <div className="w-full min-w-0 lg:col-start-1 lg:row-start-1">
           <div
-            className={`${facetedSmall} relative grid place-items-center overflow-hidden bg-wash text-emerald ${item.imageFit === "contain" ? "aspect-[0.85] max-h-[650px]" : "aspect-[1.7] max-h-[400px]"}`}
+            className={`relative grid place-items-center overflow-hidden rounded-lg bg-wash text-emerald ${item.imageFit === "contain" ? "aspect-[0.85] max-h-[650px]" : "aspect-[1.7] max-h-[400px]"}`}
           >
             {item.coverImage ? (
               <Image
@@ -178,7 +177,10 @@ export default async function Page({ params, searchParams }: Props) {
       </div>
       {!!related.length && (
         <section className={relatedSection}>
-          <SectionHeader title="Outros eventos no bairro" />
+          <SectionHeader
+            eyebrow="Continue a descoberta"
+            title="Outros eventos no bairro"
+          />
           <div className={cardGrid}>
             {related.map((x) => (
               <EventCard key={x.id} item={x} now={now.toISOString()} />

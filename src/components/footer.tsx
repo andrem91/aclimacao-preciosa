@@ -34,7 +34,7 @@ export function Footer() {
             <Link className="hover:underline" href="/participe">
               Participe
             </Link>
-            <Link className="hover:underline" href="/#sobre">
+            <Link className="hover:underline" href="/sobre">
               Sobre o projeto
             </Link>
             <Link className="hover:underline" href="/participe#contato">

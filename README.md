@@ -87,6 +87,7 @@ Lugares usam nome, categoria, resumo, texto sobre o lugar, foto, endereço e cam
 - `/eventos` — agenda do bairro
 - `/lugares` — lugares para conhecer
 - `/participe` — contribuições
+- `/sobre` — sobre o projeto, acessível pelo rodapé
 
 `/estabelecimentos` continua redirecionando para `/negocios` para preservar links antigos. `/experiencias` continua redirecionando para `/eventos`.
 

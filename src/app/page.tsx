@@ -1,18 +1,16 @@
 import {
   pageContainer,
+  eyebrow,
+  categoryTag,
   buttonStyles,
   cardGrid,
-  categoryTag,
-  facetedLarge,
-  facetedSmall,
-  textLink,
 } from "@/components/styles";
 import { connection } from "next/server";
 import { eventState } from "@/lib/events";
 import { EventRefresh } from "@/components/event-refresh";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import {
   getFeaturedEstablishments,
   getFeaturedPlaces,
@@ -24,94 +22,68 @@ import {
   EventCard,
   JoinSection,
 } from "@/components/ui";
-import { Placa } from "@/components/placa";
-
 export default async function Home() {
   await connection();
   const now = new Date();
   const places = getFeaturedPlaces();
   const businesses = getFeaturedEstablishments();
   const events = getEvents()
-    .filter((item) => ["upcoming", "ongoing"].includes(eventState(item, now)))
-    .sort(
-      (a, b) =>
-        Number(b.featured) - Number(a.featured) ||
-        // Current editorial campaign takes priority among featured events on the Home only.
-        Number(b.slug === "natal-aclimacao-preciosa") -
-          Number(a.slug === "natal-aclimacao-preciosa"),
-    )
+    .filter((x) => ["upcoming", "ongoing"].includes(eventState(x, now)))
     .slice(0, 3);
   return (
     <>
       <EventRefresh />
-      <section
-        className={`${pageContainer} grid items-center gap-10 py-10 lg:grid-cols-2 lg:gap-12 lg:py-16`}
-      >
-        <div className="min-w-0">
-          <h1 className="max-w-[15ch] text-4xl leading-tight md:text-5xl xl:text-6xl">
-            O guia do bairro da Aclimação
+      <section className="relative isolate h-[590px] bg-emerald-ink text-white 2xl:h-[640px]">
+        <Image
+          className="object-[61%_center] md:object-[center_52%]"
+          src={places[0].coverImage.src}
+          alt="Imagem ilustrativa de um lago cercado por árvores, referência para o Parque da Aclimação"
+          fill
+          loading="eager"
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-linear-to-r from-hero-shade/75 to-hero-shade/25" />
+        <div className="absolute inset-0 bg-linear-to-t from-hero-shade/60 to-transparent to-45% md:to-28%" />
+        <div
+          className={`${pageContainer} relative pt-[92px] md:pt-[94px] 2xl:pt-28`}
+        >
+          <p
+            className={`${eyebrow} mb-[21px] flex items-center gap-2.5 tracking-[0.13em] text-wash md:tracking-[0.16em] text-xs`}
+          >
+            <span className="size-1.5 rotate-45 bg-wash" /> UM GUIA PARA VIVER O
+            BAIRRO
+          </p>
+          <h1 className="max-w-[800px] text-[46px] leading-[1.18] font-[450] tracking-[-0.03em] md:text-[clamp(44px,5vw,65px)] md:leading-[1.16]">
+            Descubra a Aclimação <br className="hidden md:block" />
+            de um <em className="text-wash">novo jeito.</em>
           </h1>
-          <p className="mt-6 max-w-[46ch] text-lg text-muted">
-            Descubra negócios, eventos e lugares da Aclimação, reunidos por quem
-            vive e trabalha aqui.
+          <p className="mt-6 mb-[30px] text-base leading-[1.9] text-paper md:mt-[23px] md:text-lg">
+            Lugares, eventos e negócios
+            <br className="hidden md:block" /> que fazem o bairro ser especial.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link className={buttonStyles()} href="/negocios">
-              Explorar os negócios
-              <ArrowRight size={17} aria-hidden="true" />
-            </Link>
-            <Link className={buttonStyles("outline")} href="/eventos">
-              Ver a agenda
-            </Link>
-          </div>
-        </div>
-        <figure className="min-w-0">
-          <div className={`${facetedLarge} relative aspect-[4/3] bg-wash`}>
-            <Image
-              src={places[0].coverImage.src}
-              alt="Imagem ilustrativa de um lago cercado por árvores, referência para o Parque da Aclimação"
-              fill
-              loading="eager"
-              fetchPriority="high"
-              sizes="(min-width: 1024px) 50vw, 92vw"
-            />
-            <div className="absolute inset-x-5 bottom-5">
-              <Placa size="large">Bairro da Aclimação</Placa>
-            </div>
-          </div>
-          <figcaption className="mt-2 text-right text-xs text-muted">
-            Imagem ilustrativa
-          </figcaption>
-        </figure>
-      </section>
-      <section
-        id="sobre"
-        className={`${pageContainer} grid scroll-mt-28 gap-6 border-y border-line py-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16 lg:py-14`}
-      >
-        <h2 className="max-w-[19ch]">Por que o Aclimação Preciosa existe</h2>
-        <div className="space-y-4 text-muted">
-          <p>
-            Muita gente atravessa a Aclimação sem parar. O Aclimação Preciosa
-            nasceu de moradores e comerciantes que querem mudar isso: fazer do
-            bairro um lugar de encontro, e não só de passagem.
-          </p>
-          <p>
-            Aqui você encontra os negócios locais, a agenda de eventos e os
-            lugares que contam a história do bairro. O nome vem das ruas
-            batizadas com pedras preciosas, como Topázio, Safira, Rubi e
-            Esmeralda.
-          </p>
-          <Link className={textLink} href="/participe">
-            Quero participar
-            <ArrowRight size={17} aria-hidden="true" />
+          <Link className={buttonStyles("cream")} href="#estabelecimentos">
+            Explorar a Aclimação <ArrowDown size={17} />
           </Link>
         </div>
+        <div
+          className={`${pageContainer} absolute inset-x-0 bottom-[21px] flex flex-wrap items-center justify-between gap-2 text-xs tracking-[0.06em] text-wash md:bottom-6 md:flex-nowrap md:gap-2.5`}
+        >
+          <span className="text-[11px] tracking-[0.2em]">
+            ACLIMAÇÃO, SÃO PAULO
+          </span>
+          <span className="hidden md:block">
+            Um olhar de perto. Uma nova descoberta.
+          </span>
+          <span className="text-[11px]">Imagem ilustrativa</span>
+        </div>
       </section>
       <section
-        className={`py-12 md:py-20 ${pageContainer}`}
+        className={`py-[49px] md:py-[78px] ${pageContainer}`}
         id="estabelecimentos"
       >
         <SectionHeader
+          eyebrow="Da porta ao lado"
           title="Conheça negócios da Aclimação"
           href="/negocios"
           link="Ver todos os negócios"
@@ -122,21 +94,17 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <section className="border-y border-line bg-wash py-12 md:py-20">
+      <section className="py-[49px] md:py-[78px] border-y border-line bg-wash">
         <div className={pageContainer}>
           <SectionHeader
+            eyebrow="Encontros & descobertas"
             title="O que está acontecendo"
             href="/eventos"
             link="Ver todos os eventos"
           />
           <div className={cardGrid}>
-            {events.map((item, index) => (
-              <EventCard
-                key={item.id}
-                item={item}
-                now={now.toISOString()}
-                featured={index === 0 && item.featured}
-              />
+            {events.map((item) => (
+              <EventCard key={item.id} item={item} now={now.toISOString()} />
             ))}
             {!events.length && (
               <p>Novos encontros a caminho. Confira a agenda de eventos.</p>
@@ -144,37 +112,41 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className={`py-12 md:py-20 ${pageContainer}`}>
+      <section className={`py-[49px] md:py-[78px] ${pageContainer}`}>
         <SectionHeader
+          eyebrow="Um convite para sair"
           title="Lugares para conhecer"
           href="/lugares"
           link="Explorar lugares"
         />
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          {places.map((place, index) => (
+        <div className="grid grid-cols-1 grid-rows-[350px_260px_260px] gap-[18px] md:grid-cols-[1.16fr_1fr] md:grid-rows-[230px_230px] md:gap-5">
+          {places.map((p, i) => (
             <Link
-              key={place.id}
-              href={"/lugares/" + place.slug}
-              className={`group relative min-w-0 ${facetedSmall} overflow-hidden bg-emerald-ink text-white ${index === 0 ? "min-h-96 md:row-span-2" : "min-h-80"}`}
+              key={p.id}
+              href={"/lugares/" + p.slug}
+              className={`group relative overflow-hidden rounded bg-emerald-ink text-white ${i === 0 ? "md:row-span-2" : ""}`}
             >
               <Image
-                src={place.coverImage.src}
-                alt={place.coverImage.alt}
+                src={p.coverImage.src}
+                alt={p.coverImage.alt}
                 fill
-                sizes="(min-width: 768px) 50vw, 92vw"
+                sizes="(max-width: 700px) 92vw, 55vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink via-emerald-ink/60 to-transparent" />
-              <div className="absolute right-12 bottom-6 left-6">
-                <p className={categoryTag}>{place.category}</p>
-                <h3 className="text-3xl">{place.name}</h3>
-                <p className="mt-3 max-w-[38ch] text-sm text-paper">
-                  {place.shortDescription}
+              <div className="absolute inset-0 bg-linear-to-t from-hero-shade/90 to-transparent to-85%" />
+              <div className="absolute right-[55px] bottom-6 left-[23px] md:left-[26px]">
+                <p className={categoryTag}>{p.category}</p>
+                <h3
+                  className={`text-[29px] ${i === 0 ? "md:text-[35px]" : ""}`}
+                >
+                  {p.name}
+                </h3>
+                <p className="mt-2.5 max-w-[38ch] text-sm leading-[1.8] text-wash">
+                  {p.shortDescription}
                 </p>
               </div>
               <ArrowUpRight
-                className="absolute right-5 bottom-7"
+                className="absolute right-[23px] bottom-7"
                 size={25}
-                aria-hidden="true"
               />
             </Link>
           ))}

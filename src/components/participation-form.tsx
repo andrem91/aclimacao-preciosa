@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Store, CalendarDays, TreePine, ArrowRight } from "lucide-react";
 import {
   buttonStyles,
+  eyebrow,
   formControl,
   formLabel,
   formTextarea,
@@ -107,6 +108,11 @@ export function ParticipationForm({
           className="min-w-0 scroll-mt-28 rounded border border-line bg-surface p-5 md:p-9"
           id="contato"
         >
+          <p
+            className={`${eyebrow} mb-2 text-xs tracking-[0.16em] text-emerald`}
+          >
+            Sua contribuição
+          </p>
           <h2 className="mb-7 text-3xl">
             {choices.find((choice) => choice.id === initial)?.label}
           </h2>

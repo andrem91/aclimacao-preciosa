@@ -46,6 +46,7 @@ export default async function Page({
   return (
     <div className={`${pageContainer} min-h-[65vh] pb-[55px] md:pb-[85px]`}>
       <PageIntro
+        eyebrow="Pelo caminho"
         title="Lugares para conhecer"
         description="Entre árvores, livros e arquitetura, encontre seu próximo passeio pelo bairro."
       />
