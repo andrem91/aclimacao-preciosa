@@ -1,10 +1,8 @@
-import { Placa } from "@/components/placa";
 import {
   pageContainer,
   backLink,
   detailHeading,
   categoryTag,
-  facetedSmall,
   introCopy,
   buttonStyles,
   prose,
@@ -76,11 +74,6 @@ export default async function Page({ params, searchParams }: Props) {
         <p className={categoryTag}>{x.category}</p>
         <h1>{x.name}</h1>
         <p className={introCopy}>{x.shortDescription}</p>
-        {x.address && (
-          <div className="mt-5">
-            <Placa>{x.address.street}</Placa>
-          </div>
-        )}
       </header>
       <div
         className={`flex flex-col gap-7 lg:grid lg:items-start lg:gap-9 ${hasInfo ? "lg:grid-cols-[minmax(0,1fr)_350px]" : "mx-auto max-w-[800px] lg:grid-cols-1"}`}
@@ -119,9 +112,7 @@ export default async function Page({ params, searchParams }: Props) {
           </aside>
         )}
         <div className="w-full min-w-0 lg:col-start-1 lg:row-start-1">
-          <div
-            className={`${facetedSmall} relative aspect-[1.6] overflow-hidden`}
-          >
+          <div className="relative aspect-[1.6] overflow-hidden rounded-lg">
             <Image
               src={x.coverImage.src}
               alt={x.coverImage.alt}
@@ -162,7 +153,10 @@ export default async function Page({ params, searchParams }: Props) {
       </div>
       {!!related.length && (
         <section className={relatedSection}>
-          <SectionHeader title="Outros lugares para conhecer" />
+          <SectionHeader
+            eyebrow="Continue a descoberta"
+            title="Outros lugares para conhecer"
+          />
           <div className={cardGrid}>
             {related.map((item) => (
               <PlaceCard key={item.id} item={item} />

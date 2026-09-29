@@ -6,7 +6,14 @@ const datasets = {
   events: "eventos",
   places: "lugares",
 };
-const routes = ["/", "/negocios", "/eventos", "/lugares", "/participe"];
+const routes = [
+  "/",
+  "/negocios",
+  "/eventos",
+  "/lugares",
+  "/participe",
+  "/sobre",
+];
 function checkImages(value) {
   if (!value || typeof value !== "object") return;
   if (typeof value.src === "string" && value.src.startsWith("/images/"))
@@ -54,12 +61,16 @@ for (const route of routes) {
     !/Ã[§£³©­]|â€|Â©/.test(html),
     `${route}: corrupted Portuguese text`,
   );
+  assert.ok(!html.includes("bg-placa") && !html.includes("clip-path:polygon"));
   if (route === "/") {
-    assert.ok(html.includes('id="sobre"'));
-    assert.ok(html.includes("O guia do bairro da Aclimação"));
-    // Seasonal highlight leaves the Home when its last session has ended.
-    if (new Date() < new Date("2026-12-21T01:00:00Z"))
-      assert.ok(html.includes('href="/eventos/natal-aclimacao-preciosa"'));
+    assert.ok(!html.includes('id="sobre"'));
+    assert.ok(html.includes("Descubra a Aclimação"));
+    assert.ok(html.includes('href="/sobre"'));
+    assert.ok(!html.includes("md:col-span-full"));
+  }
+  if (route === "/sobre") {
+    assert.ok(html.includes("Por que o Aclimação Preciosa existe"));
+    assert.ok(html.includes("Topázio, Safira, Rubi e Esmeralda"));
   }
   if (route === "/eventos/natal-aclimacao-preciosa")
     assert.ok(html.includes("Programação em construção"));

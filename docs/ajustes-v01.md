@@ -1,5 +1,7 @@
 # Entrega dos ajustes v0.1
 
+> Registro histórico da primeira entrega. Na revisão de 29/09/2026, o usuário optou pelo visual anterior da Home, sem placas, cantos lapidados ou card largo. Os rótulos decorativos e o itálico foram restaurados; o Sobre passou a `/sobre`, pelo rodapé. Etiquetas de categoria, grade de tablet e integrações foram mantidas. Consulte `PROJECT_CONTEXT.md` para o estado vigente.
+
 Branch: `codex/ajustes-v01`, destinada a pull request para `main`.
 
 ## Validações locais

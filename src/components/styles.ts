@@ -5,10 +5,7 @@ export const cardGrid =
   "grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-5 xl:gap-7";
 export const categoryTag =
   "mb-3 inline-block w-fit rounded bg-emerald-soft px-2.5 py-1 text-xs font-semibold text-emerald-deep";
-export const facetedLarge =
-  "[clip-path:polygon(18px_0,100%_0,100%_calc(100%-18px),calc(100%-18px)_100%,0_100%,0_18px)]";
-export const facetedSmall =
-  "[clip-path:polygon(10px_0,100%_0,100%_calc(100%-10px),calc(100%-10px)_100%,0_100%,0_10px)]";
+export const eyebrow = "font-sans font-bold leading-[1.6] uppercase";
 export const introCopy =
   "mt-5 max-w-[66ch] text-base leading-[1.9] text-muted lg:text-lg";
 export const textLink =

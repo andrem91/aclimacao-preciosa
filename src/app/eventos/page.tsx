@@ -56,6 +56,7 @@ export default async function Page({
     <div className={`${pageContainer} min-h-[65vh] pb-[55px] md:pb-[85px]`}>
       <EventRefresh />
       <PageIntro
+        eyebrow="Encontre seu próximo programa"
         title="Eventos na Aclimação"
         description="Música, cultura, oficinas e encontros para viver o bairro. Escolha seu próximo programa."
       />

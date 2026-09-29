@@ -1,6 +1,6 @@
 # Aclimação Preciosa — contexto para desenvolvimento
 
-Atualizado em 28/09/2026 para os ajustes v0.1 na branch `codex/ajustes-v01`; conferir o PR e os checks para o estado da publicação.
+Atualizado em 29/09/2026 para a revisão visual na branch `codex/restaurar-visual`; conferir o PR e os checks para o estado da publicação.
 Este documento registra o produto, decisões e limites atuais para continuar o trabalho com Codex, Claude Code ou outra ferramenta, sem depender do histórico da conversa.
 
 ## Como começar
@@ -112,9 +112,11 @@ Breakpoints atuais: `sm` 640, `md` 768, `lg` 1024, `xl` 1280 e `2xl` 1536 px. Os
 
 Fontes: Plus Jakarta Sans para interface e Playfair Display para títulos. Preservar legibilidade (o usuário já pediu letras maiores), foco visível, menu por teclado, áreas de toque, textos alternativos e respeito a movimento reduzido.
 
-Cores dos componentes usam tokens do tema. Categorias usam `categoryTag`; rótulos decorativos (`eyebrow`) foram removidos. `Placa` referencia as placas de rua de São Paulo e aparece apenas quando existe endereço, além da placa do bairro no hero. Cantos lapidados aparecem no hero, nos destaques de lugares da Home e nas imagens principais dos detalhes. Ainda existem medidas legadas em pixels; não afirmar que toda a escala foi migrada.
+Cores dos componentes usam tokens do tema. Categorias usam `categoryTag`, mas os rótulos decorativos (`eyebrow`) foram restaurados por decisão do usuário, assim como o itálico no hero e no convite à participação. As placas azuis, seu componente/token e as receitas de cantos lapidados foram removidos. Imagens voltaram aos cantos anteriores.
 
-A grade compartilhada usa 1 coluna no celular, 2 em `md` e 3 em `lg`. O hero é dividido entre texto e imagem, seguido de `/#sobre`. O primeiro evento em destaque usa card largo. A Home prioriza destaques ativos, com preferência editorial explícita pelo Natal Aclimação Preciosa entre esses destaques; a agenda permanece cronológica. Eventos encerrados saem da Home.
+A grade compartilhada mantém 1 coluna no celular, 2 em `md` e 3 em `lg`. O hero voltou à foto de fundo com sobreposição escura, texto e botão, e a seção de lugares recuperou o mosaico anterior. Eventos ativos aparecem cronologicamente na Home, até três cards comuns, sem prioridade para o Natal ou formato largo. O cadastro do Natal permanece na agenda.
+
+“Sobre o projeto” fica em `/sobre`, com navegação apenas pelo rodapé. Não há seção Sobre na Home nem link no menu principal. O formulário continua com a lateral “Como funciona”, consentimento e envio real via Server Action.
 
 O Natal é um exemplo com programação em construção, nove sessões de 12 a 20/12/2026, das 17h às 22h. O renderizador atual aceita somente links HTTP(S), portanto a frase com link relativo foi omitida conforme autorizado.
 
