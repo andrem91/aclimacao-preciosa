@@ -1,5 +1,5 @@
 import {
-  eyebrow as eyebrowStyles,
+  categoryTag,
   eventStateColor,
   textLink,
   introCopy,
@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight, MapPin, CalendarDays } from "lucide-react";
-import type { BaseContent, Establishment, Event, Place } from "@/types/content";
+import type { Establishment, Event, Place } from "@/types/content";
 
 import {
   eventDateLabel,
@@ -17,14 +17,13 @@ import {
   eventState,
   eventStateLabels,
 } from "@/lib/events";
+import { Placa } from "./placa";
 import { BusinessMedia } from "./business-media";
 export function SectionHeader({
-  eyebrow,
   title,
   href,
   link,
 }: {
-  eyebrow: string;
   title: string;
   href?: string;
   link?: string;
@@ -32,11 +31,6 @@ export function SectionHeader({
   return (
     <div className="mb-[26px] block md:mb-8 md:flex md:flex-wrap md:items-start md:justify-between md:gap-6 xl:items-end">
       <div>
-        <p
-          className={`${eyebrowStyles} mb-[9px] text-emerald text-xs tracking-[0.16em]`}
-        >
-          {eyebrow}
-        </p>
         <h2 className="max-w-[18ch] text-[29px] md:max-w-none xl:text-[32px]">
           {title}
         </h2>
@@ -51,21 +45,14 @@ export function SectionHeader({
   );
 }
 export function PageIntro({
-  eyebrow,
   title,
   description,
 }: {
-  eyebrow: string;
   title: string;
   description: string;
 }) {
   return (
     <div className="max-w-[810px] pt-[38px] pb-[25px] md:pt-[60px] md:pb-[35px]">
-      <p
-        className={`${eyebrowStyles} mb-[17px] text-emerald text-xs tracking-[0.16em]`}
-      >
-        {eyebrow}
-      </p>
       <h1 className="text-[clamp(38px,4vw,54px)]">{title}</h1>
       <p className={introCopy}>{description}</p>
     </div>
@@ -76,23 +63,19 @@ function Card({
   title,
   href,
   category,
-  meta,
-  location,
   eager = false,
   practical,
 }: {
-  item: BaseContent;
+  item: Place;
   title: string;
   href: string;
   category: string;
-  meta?: string;
-  location?: string;
   eager?: boolean;
   practical?: string;
 }) {
   return (
     <Link href={href} className="group block min-w-0">
-      <div className="relative aspect-[1.45] overflow-hidden rounded bg-[#e4e6dc] md:aspect-[1.43]">
+      <div className="relative aspect-[1.45] overflow-hidden rounded bg-wash md:aspect-[1.43]">
         <Image
           className="transition-transform duration-500 group-hover:scale-[1.035]"
           src={item.coverImage.src}
@@ -106,30 +89,21 @@ function Card({
         </span>
       </div>
       <div className="px-px pt-[17px] md:pt-[19px]">
-        <p className="mb-2 font-sans text-xs font-bold leading-[1.6] tracking-[0.1em] text-olive uppercase">
-          {category}
-        </p>
+        <p className={categoryTag}>{category}</p>
         <h3 className="text-[27px] leading-[1.25] group-hover:text-emerald md:text-[22px] xl:text-2xl">
           {title}
         </h3>
         <p className="mt-2.5 max-w-none text-base leading-[1.8] text-muted md:max-w-[36ch]">
           {item.shortDescription}
         </p>
+        {item.address && (
+          <div className="mt-4">
+            <Placa size="small">{item.address.street}</Placa>
+          </div>
+        )}
         {practical && (
           <p className="mt-[18px] border-t border-line pt-3.5 text-sm font-semibold text-emerald">
             {practical}
-          </p>
-        )}
-        {meta && (
-          <p className="mt-3 flex items-center gap-2 text-sm leading-[1.5] text-[#59665b] md:text-xs [&+p]:mt-[7px]">
-            <CalendarDays size={14} />
-            {meta}
-          </p>
-        )}
-        {location && (
-          <p className="mt-3 flex items-center gap-2 text-sm leading-[1.5] text-[#59665b] md:text-xs [&+p]:mt-[7px]">
-            <MapPin size={14} />
-            {location}
           </p>
         )}
       </div>
@@ -152,15 +126,22 @@ export function EstablishmentCard({
         <BusinessMedia item={item} eager={eager} />
       </div>
       <div className="flex flex-1 flex-col px-px pt-[17px] md:pt-[19px]">
-        <p className="mb-2 font-sans text-xs font-bold leading-[1.6] tracking-[0.1em] text-olive uppercase">
-          {item.category}
-        </p>
+        <p className={categoryTag}>{item.category}</p>
         <h3 className="text-[27px] leading-[1.25] group-hover:text-emerald">
           {item.name}
         </h3>
         <p className="mt-2.5 flex-1 text-base leading-[1.8] text-muted md:max-w-[36ch]">
           {item.shortDescription}
         </p>
+        {item.address && (
+          <div className="mt-4">
+            <Placa size="small">
+              {[item.address.street, item.address.number]
+                .filter(Boolean)
+                .join(", ")}
+            </Placa>
+          </div>
+        )}
       </div>
     </Link>
   );
@@ -170,8 +151,10 @@ export function EventCard({
   eager,
   now,
   returnTo,
+  featured = false,
 }: {
   item: Event;
+  featured?: boolean;
   eager?: boolean;
   now: string;
   returnTo?: string;
@@ -181,10 +164,10 @@ export function EventCard({
   return (
     <Link
       href={href}
-      className="group flex min-w-0 flex-col overflow-hidden rounded-lg border border-line bg-surface"
+      className={`group flex min-w-0 flex-col overflow-hidden rounded-lg border border-line bg-surface ${featured ? "md:col-span-full md:grid md:grid-cols-2" : ""}`}
     >
       <div
-        className={`relative grid place-items-center overflow-hidden bg-wash text-emerald ${item.imageFit === "contain" ? "aspect-square" : "aspect-[1.45] md:aspect-[1.43]"}`}
+        className={`relative grid place-items-center overflow-hidden bg-wash text-emerald ${item.imageFit === "contain" ? "aspect-square" : "aspect-[1.45] md:aspect-[1.43]"} ${featured ? "md:aspect-auto md:min-h-80" : ""}`}
       >
         {item.coverImage ? (
           <Image
@@ -200,12 +183,10 @@ export function EventCard({
         )}
       </div>
       <div className="flex flex-1 flex-col p-[22px]">
-        <p className="mb-2 font-sans text-xs font-bold leading-[1.6] tracking-[0.1em] text-olive uppercase">
-          {item.category}
-        </p>
+        <p className={categoryTag}>{item.category}</p>
         {state !== "upcoming" && (
           <span
-            className={`mb-3 w-fit rounded-[3px] bg-[#ede9e0] px-2 py-1 text-sm ${eventStateColor[state]}`}
+            className={`mb-3 w-fit rounded-[3px] bg-paper px-2 py-1 text-sm ${eventStateColor[state]}`}
           >
             {eventStateLabels[state]}
           </span>
@@ -268,22 +249,15 @@ export function PlaceCard({
 }
 export function JoinSection() {
   return (
-    <section className="bg-[#0d4b39] py-[46px] text-paper md:py-[66px]">
+    <section className="bg-emerald-dark py-[46px] text-paper md:py-[66px]">
       <div
         className={`${pageContainer} block md:flex md:items-center md:justify-between md:gap-8`}
       >
         <div>
-          <p
-            className={`${eyebrowStyles} mb-3.5 text-[#bdd4b6] text-xs tracking-[0.16em]`}
-          >
-            O bairro é feito por você
-          </p>
-          <h2 className="text-[35px] leading-[1.22] md:text-[39px]">
-            Faça parte do
-            <br />
-            <em>Aclimação Preciosa.</em>
+          <h2 className="max-w-[22ch] text-4xl leading-tight">
+            Faça parte do Aclimação Preciosa
           </h2>
-          <p className="mt-[19px] max-w-[47ch] text-base text-[#d1ded0]">
+          <p className="mt-[19px] max-w-[47ch] text-base text-wash">
             Tem um negócio, evento ou conhece um lugar especial no bairro? Conte
             para nós.
           </p>
@@ -302,7 +276,9 @@ export function Paragraphs({ text }: { text: string }) {
   return (
     <>
       {text.split("\n\n").map((p, i) => (
-        <p key={i}>{p}</p>
+        <p className="mt-4 text-muted" key={i}>
+          {p}
+        </p>
       ))}
     </>
   );

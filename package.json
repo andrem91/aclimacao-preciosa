@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write src scripts package.json tsconfig.json next.config.ts eslint.config.mjs postcss.config.mjs README.md",
     "check:portal": "node scripts/check-portal.mjs",
-    "test:events": "node --experimental-strip-types --test scripts/events.test.mjs"
+    "test:events": "node --experimental-strip-types --test scripts/events.test.mjs",
+    "test:participation": "node --experimental-strip-types --test scripts/participation.test.mjs"
   },
   "dependencies": {
     "@fontsource-variable/playfair-display": "5.3.0",

@@ -16,7 +16,6 @@ export default async function Page({
   return (
     <div className={`${pageContainer} min-h-[65vh] pb-[55px] md:pb-[85px]`}>
       <PageIntro
-        eyebrow="O próximo encontro começa com você"
         title="Faça parte do Aclimação Preciosa"
         description="Tem um negócio, conhece um lugar especial ou quer compartilhar uma história? O bairro também se revela pelo seu olhar."
       />

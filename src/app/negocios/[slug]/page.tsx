@@ -1,7 +1,9 @@
+import { Placa } from "@/components/placa";
 import {
   pageContainer,
   backLink,
-  eyebrow,
+  categoryTag,
+  facetedSmall,
   introCopy,
   prose,
   relatedSection,
@@ -58,14 +60,21 @@ export default async function Page({ params }: Props) {
         <BusinessMedia item={item} eager detail />
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-3">
-            <p className={`${eyebrow} text-emerald text-xs tracking-[0.16em]`}>
-              {item.category}
-            </p>
+            <p className={categoryTag}>{item.category}</p>
           </div>
           <h1 className="mt-3 text-4xl leading-[1.2] md:text-[clamp(34px,4.2vw,55px)]">
             {item.name}
           </h1>
           <p className={introCopy}>{item.shortDescription}</p>
+          {item.address && (
+            <div className="mt-5">
+              <Placa>
+                {[item.address.street, item.address.number]
+                  .filter(Boolean)
+                  .join(", ")}
+              </Placa>
+            </div>
+          )}
         </div>
       </header>
       <div className="flex flex-col gap-7 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-10 lg:[&:not(:has(aside_section))]:grid-cols-1">
@@ -101,7 +110,7 @@ export default async function Page({ params }: Props) {
           {item.coverImage && (
             <div
               data-business-photo
-              className="relative aspect-[1.5] max-h-[380px] overflow-hidden rounded-lg bg-[#e2e7db] lg:aspect-[1.8]"
+              className={`${facetedSmall} relative aspect-[1.5] max-h-[380px] overflow-hidden bg-wash lg:aspect-[1.8]`}
             >
               <Image
                 src={item.coverImage.src}
@@ -120,7 +129,7 @@ export default async function Page({ params }: Props) {
         </div>
       </div>
       <section className={relatedSection}>
-        <SectionHeader eyebrow="Continue a descoberta" title="Veja também" />
+        <SectionHeader title="Veja também" />
         <div className={cardGrid}>
           {related.map((x) => (
             <EstablishmentCard key={x.id} item={x} />

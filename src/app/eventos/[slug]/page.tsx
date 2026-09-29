@@ -3,7 +3,8 @@ import {
   pageContainer,
   backLink,
   detailHeading,
-  eyebrow,
+  categoryTag,
+  facetedSmall,
   introCopy,
   prose,
   relatedSection,
@@ -69,9 +70,7 @@ export default async function Page({ params, searchParams }: Props) {
         Voltar aos eventos
       </Link>
       <header className={detailHeading}>
-        <p className={`${eyebrow} text-emerald text-xs tracking-[0.16em]`}>
-          Evento · {item.category}
-        </p>
+        <p className={categoryTag}>{item.category}</p>
         <h1>{item.title}</h1>
         <p className={introCopy}>{item.subtitle}</p>
       </header>
@@ -85,7 +84,7 @@ export default async function Page({ params, searchParams }: Props) {
           </h2>
           {state !== "upcoming" && (
             <div
-              className={`mb-5 rounded bg-[#f3eee5] p-4 leading-[1.6] ${eventStateColor[state]}`}
+              className={`mb-5 rounded bg-paper p-4 leading-[1.6] ${eventStateColor[state]}`}
             >
               <strong>{eventStateLabels[state]}</strong>
               <p className="mt-1.5 text-sm">
@@ -101,7 +100,7 @@ export default async function Page({ params, searchParams }: Props) {
           )}
           <dl className="grid grid-cols-2 gap-x-5 lg:block">
             <div className="col-span-full min-w-0 [&+div]:mt-5">
-              <dt className="text-xs font-semibold tracking-[0.08em] text-[#687660] uppercase">
+              <dt className="text-xs font-semibold tracking-[0.08em] text-muted uppercase">
                 {state === "postponed"
                   ? "Programação anterior"
                   : "Dias e horários"}
@@ -148,7 +147,7 @@ export default async function Page({ params, searchParams }: Props) {
         </aside>
         <div className="w-full min-w-0 lg:col-start-1 lg:row-start-1">
           <div
-            className={`relative grid place-items-center overflow-hidden rounded-lg bg-wash text-emerald ${item.imageFit === "contain" ? "aspect-[0.85] max-h-[650px]" : "aspect-[1.7] max-h-[400px]"}`}
+            className={`${facetedSmall} relative grid place-items-center overflow-hidden bg-wash text-emerald ${item.imageFit === "contain" ? "aspect-[0.85] max-h-[650px]" : "aspect-[1.7] max-h-[400px]"}`}
           >
             {item.coverImage ? (
               <Image
@@ -179,10 +178,7 @@ export default async function Page({ params, searchParams }: Props) {
       </div>
       {!!related.length && (
         <section className={relatedSection}>
-          <SectionHeader
-            eyebrow="Continue a descoberta"
-            title="Outros eventos no bairro"
-          />
+          <SectionHeader title="Outros eventos no bairro" />
           <div className={cardGrid}>
             {related.map((x) => (
               <EventCard key={x.id} item={x} now={now.toISOString()} />

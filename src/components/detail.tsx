@@ -4,7 +4,7 @@ export function Info({ label, value }: { label: string; value?: string }) {
   if (!value) return null;
   return (
     <div className="min-w-0 [&+div]:mt-5">
-      <dt className="text-xs font-semibold tracking-[0.08em] text-[#687660] uppercase">
+      <dt className="text-xs font-semibold tracking-[0.08em] text-muted uppercase">
         {label}
       </dt>
       <dd className="mt-1.5 text-base leading-[1.8] wrap-anywhere">{value}</dd>

@@ -8,6 +8,12 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
+## Project context
+
+- Read [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) before planning or changing this project. It records current product decisions, architecture, verification steps and known limitations.
+- Treat `ACLIMACAO_PRECIOSA_SPEC_V0_1.md` and `prompt_site.txt` as historical references; do not reintroduce superseded requirements from them.
+- Keep the context document current when changing product decisions, integrations or development workflows. Report only checks actually completed.
+
 ## Styling conventions
 
 - Use Tailwind utilities for new and refactored UI, including responsive states, hover and focus.
