@@ -84,51 +84,32 @@ for (const route of routes) {
       "Business cards must not use photo banners",
     );
   }
-  if (route === "/negocios/cafe-livraria-da-praca") {
-    assert.ok(
-      html.includes("data-business-photo") &&
-        html.includes("/images/cafe-livraria-da-praca.svg"),
-    );
-    assert.ok(html.includes('href="mailto:contato@example.com"'));
-    assert.ok(html.includes('aria-label="Copiar e-mail"'));
-    for (const name of [
-      "Instagram",
-      "YouTube",
-      "LinkedIn",
-      "Facebook",
-      "TikTok",
-    ])
-      assert.ok(html.includes(`aria-label="${name}"`), `Missing ${name}`);
-  }
-  if (route === "/negocios/atelie-mariana-prado") {
-    assert.ok(!html.includes("data-business-photo"));
+  if (route === "/negocios/onodera-aclimacao") {
+    assert.ok(html.includes("Av. da Aclimação"));
     assert.ok(html.includes('aria-label="Instagram"'));
-    assert.ok(!html.includes('aria-label="YouTube"'));
-  }
-  if (route === "/negocios/eletricista-do-bairro") {
+    assert.ok(html.includes('href="https://wa.me/5511976120557"'));
     assert.ok(
-      html.includes("No local do cliente") &&
-        html.includes("Aclimação e arredores"),
-    );
-    assert.ok(
-      !/<dt[^>]*>Endereço<\/dt>/.test(html),
-      "Mobile provider must not display an address",
-    );
-    assert.ok(
-      html.includes('aria-label="Iniciais de Eletricista do Bairro"'),
+      html.includes('aria-label="Iniciais de Onodera Estética Aclimação"'),
       "Missing initials fallback",
     );
-    assert.ok(
-      !html.includes('aria-label="Contatos do negócio"'),
-      "Empty contact section",
-    );
-    assert.ok(!html.includes("data-business-photo"), "Empty photo section");
   }
-  if (route === "/negocios/atelie-mariana-prado")
+  if (route === "/negocios/luiv-ia") {
+    assert.ok(html.includes("Online"));
+    assert.ok(html.includes("luivia.com.br"));
     assert.ok(
-      html.includes("/images/atelie-mariana-prado.svg"),
-      "Missing logo",
+      !/<dt[^>]*>Endereço<\/dt>/.test(html),
+      "Online business must not display an address",
     );
+    assert.ok(
+      html.includes('aria-label="Iniciais de Luiv.IA"'),
+      "Missing initials fallback",
+    );
+  }
+  if (route === "/negocios/vila-secreta") {
+    assert.ok(html.includes('href="mailto:vilasecreta@vilasecreta.com.br"'));
+    assert.ok(html.includes('aria-label="Instagram"'));
+    assert.ok(html.includes("Sextas às 15h"));
+  }
   console.log(`OK ${route}`);
 }
 for (const route of ["/negocios", "/lugares", "/eventos", "/experiencias"]) {
@@ -143,7 +124,7 @@ for (const route of ["/negocios", "/lugares", "/eventos", "/experiencias"]) {
   );
 }
 const redirected = await fetch(base + "/experiencias", { redirect: "manual" });
-for (const suffix of ["", "/cafe-livraria-da-praca"]) {
+for (const suffix of ["", "/onodera-aclimacao"]) {
   const legacy = await fetch(
     base + "/estabelecimentos" + suffix + "?origem=teste",
     { redirect: "manual" },
